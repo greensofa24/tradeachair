@@ -7,9 +7,6 @@ you trade chairs to get to better chairs
 5 Uc --> 1 Sc
 10 Uc --> 1 Quc
 
-
-
-
 Key:
 P: Painful
 E: Extremely
