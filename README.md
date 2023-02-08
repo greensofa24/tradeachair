@@ -19,7 +19,6 @@ Cr: Crushable
 Cl: Coloured
 O: Office
 
-
 C: Chair
 B: Bench
 St: Stool
