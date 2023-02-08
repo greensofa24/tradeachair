@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chair Trade</title>
+</head>
+<body>
+<h1>Chair Trade</h1>
+
+<img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
+<span id=euc>0</span>
+<button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>
+
+<img src="https://www.eosworldwide.com/wp-content/uploads/2020/01/Rocks_for_all_simplified.jpg" width="70">
+<span id=vuc>0</span>
+<!--<button onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 5){
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1;
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 5
+}">Trade</button>
+<p>Very Uncomfortable Chair</p>
+
+<img src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
+<span id=uc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('vuc').innerText) >= 5){
+document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1;
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5
+}">Trade</button>
+<p>Uncomfortable Chair</p>
+
+</body>
+</html>
