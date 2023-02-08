@@ -10,7 +10,7 @@ you trade chairs to get to better chairs
 
 10 Uc --> 1 Quc
 
-Key:
+## Key
 P: Painful
 E: Extremely
 V: Very
