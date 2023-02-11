@@ -2,13 +2,19 @@
 you trade chairs to get to better chairs
 
 ## Trade guide
-5 Euc --> 1 Vuc
+3 Euc --> 1 Vuc
 
 5 Vuc --> 1 Uc
 
-5 Uc --> 1 Sc
+3 Uc --> 1 Sc
 
-10 Uc --> 1 Quc
+5 Uc --> 1 Spuc
+
+3 Spuc --> 1 Quc
+
+10 Spuc --> 1 C
+
+3 C --> 1 B
 
 ## Key
 P: Painful
