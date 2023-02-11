@@ -58,6 +58,28 @@ document.getElementById('uc').innerText = parseInt(document.getElementById('uc')
 }">Trade</button>
 <p>Splintery Uncomfortable Chair</p>
 
+<img src="https://www.apexdesign.com/media/catalog/product/cache/24/image/9df78eab33525d08d6e5fb8d27136e95/a/l/aluminium-cross-back-outdoor-chair-1.jpg" width="70">
+<span id=ac>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('sc').innerText) >= 3){
+document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + 1;
+document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 3
+}">Trade</button>
+<p>Aluminium Chair</p>
+
+<img src="https://static.havenly.com/product/production/php_59a6e65249d74.jpg" width="70">
+<span id=brc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('sc').innerText) >= 4){
+document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) + 1;
+document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 4
+}">Trade</button>
+<p>Brass Chair</p>
+
 <img src="https://st.hzcdn.com/fimgs/28e1ac030f625e4e_4080-w300-h300-b1-p0--.jpg" width="50" style="position:relative;left: 10px">
 <span id=quc style="position:relative;left: 20px">0</span>
 <!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
@@ -69,16 +91,38 @@ document.getElementById('spuc').innerText = parseInt(document.getElementById('sp
 }">Trade</button>
 <p>Quite Uncomfortable Chair</p>
 
+<img src="https://media.nisbets.com/asset/core/prodimage/large_new/gl329_5.jpg" width="70">
+<span id=stc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('brc').innerText) >= 2){
+document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) + 1;
+document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) - 2
+}">Trade</button>
+<p>Steel Chair</p>
+
 <img src="https://www.shack.com.au/wp-content/uploads/CHATEAU-DINING-CHAIR-SIDE.jpg" width="70">
 <span id=c>0</span>
 <!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
-if(parseInt(document.getElementById('spuc').innerText) >= 10){
+if(parseInt(document.getElementById('spuc').innerText) >= 5){
 document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) + 1;
-document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 10
+document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 5
 }">Trade</button>
 <p>Chair</p>
+
+<img src="https://cdn.myportfolio.com/7e2b3e9ad6427ce7868402c4a32f5580/90164cffbd848e968cb733c3_rw_1200.jpg?h=32fff8339d92ca2bac10dd7474222adc" width="70">
+<span id=brzc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('stc').innerText) >= 3){
+document.getElementById('brzc').innerText = parseInt(document.getElementById('brzc').innerText) + 1;
+document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 3
+}">Trade</button>
+<p>Bronze Chair</p>
 
 <img src="https://www.mitre10.com.au/media/catalog/product/6/1/6153613-0_3.jpg?optimize=high&fit=bounds&height=840&width=840&canvas=840:840" width="70">
 <span id=b>0</span>
@@ -90,31 +134,60 @@ document.getElementById('b').innerText = parseInt(document.getElementById('b').i
 document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) - 3
 }">Trade</button>
 <p>Bench</p>
+
+<img src="https://haveaseat.com.au/wp-content/uploads/2021/12/MG_0270-2.jpg" width="70">
+<span id=cpc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('stc').innerText) >= 5){
+document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) + 1;
+document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 5
+}">Trade</button>
+<p>Copper Chair</p>
+
+<img src="http://cdn.shopify.com/s/files/1/0036/9881/9187/products/crystal_tiff_no_cush_1400x.jpg?v=1528849709" width="70">
+<span id=slc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('cpc').innerText) >= 75){
+document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) + 1;
+document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) - 75
+}">Trade</button>
+<p>Silver Chair</p>
+
+<img src="https://www.ergohuman.com.au/img/ERG-LPGM-HRL-1.jpg" width="70">
+<span id=ptc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('slc').innerText) >= 40){
+document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) + 1;
+document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) - 40
+}">Trade</button>
+<p>Platinum Chair</p>
+
+<img src="https://cqpartyhire.com.au/wp-content/uploads/2018/05/Gold-Tiffany-chair-1.jpg" width="70">
+<span id=gc>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('ptc').innerText) >= 2){
+document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) + 1;
+document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) - 2
+}">Trade</button>
+<p>Gold Chair</p>
+
+<img src="https://cqpartyhire.com.au/wp-content/uploads/2018/05/Gold-Tiffany-chair-1.jpg" width="70">
+<span id=t>0</span>
+<!--<button onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1">Buy</button>
+<p>Extremely Uncomfortable Chair</p>-->
+<button onclick="
+if(parseInt(document.getElementById('gc').innerText) >= 5){
+document.getElementById('t').innerText = parseInt(document.getElementById('t').innerText) + 1;
+document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) - 5
+}">Trade</button>
+<p>Throne</p>
 </body>
 </html>
-
-<p>
-Trade guide
-<br>
-<br>5 Euc –> 1 Vuc
-<br>5 Vuc –> 1 Uc
-<br>5 Uc –> 1 Sc
-<br>10 Uc –> 1 Quc
-<br>
-<br>Key
-<br>
-<br>P: Painful
-<br>E: Extremely
-<br>V: Very
-<br>U: Uncomfortable
-<br>S: Stone
-<br>Sm: Smooth
-<br>Q: Quite
-<br>Cr: Crushable
-<br>Cl: Coloured
-<br>O: Office
-<br>
-<br>C: Chair
-<br>B: Bench
-<br>St: Stool
-</p>
