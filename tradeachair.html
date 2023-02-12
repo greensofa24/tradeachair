@@ -14,6 +14,13 @@
 <button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + 1">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
 
+<script>
+function ub(a, b) {
+document.getElementById(a).style.display = 'inline';
+document.getElementById(b).style.display = 'none';
+}
+</script>
+
 <img src="https://www.eosworldwide.com/wp-content/uploads/2020/01/Rocks_for_all_simplified.jpg" width="70">
 <span id=vuc>0</span>
 <!--<button onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1">Buy</button>
@@ -23,6 +30,13 @@ if(parseInt(document.getElementById('euc').innerText) >= 3){
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1;
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 3
 }">Trade</button>
+<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1" style="display:none">Buy</button>
+<button id="vucub" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 200){
+ub('vucbuy', 'vucub');
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200
+}">Unlock Buy</button>
+
 <p>Very Uncomfortable Chair</p>
 
 <img src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
@@ -34,6 +48,12 @@ if(parseInt(document.getElementById('vuc').innerText) >= 5){
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1;
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5
 }">Trade</button>
+<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1" style="display:none">Buy</button>
+<button id="ucub" onclick="
+if(parseInt(document.getElementById('vuc').innerText) >= 300){
+ub('ucbuy', 'ucub');
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300
+}">Unlock Buy</button>
 <p>Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
