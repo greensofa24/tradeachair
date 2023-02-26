@@ -13,7 +13,6 @@
 <script>
 var progress = 1;
 var prestige = 1;
-document.getElementById('euc').innerText = localStorage.getItem("euc");
 </script>
 
 <button onclick="
@@ -237,6 +236,7 @@ document.getElementById('gc').innerText = parseInt(document.getElementById('gc')
 <p>Throne</p>
 
 <button onclick="localStorage.setItem('euc', document.getElementById('euc').innerText)">Save</button>
+<button onclick="document.getElementById('euc').innerText = localStorage.getItem('euc')">Load</button>
 
 </body>
 </html>
