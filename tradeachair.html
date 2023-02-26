@@ -10,15 +10,24 @@
 <a href="https://greensofa24.github.io/tradeachair/guide">Trade Guide</a>
 <br><br>
 
+<script>
+var progress = 1;
+var prestige = 1;
+</script>
+
 <button onclick="
 document.getElementById('euc').innerText = 0;
 document.getElementById('vuc').innerText = 0;
-">Prestige</button>
+progress = prestige;
+ub('vucub', 'vucbuy')
+">Prestige <span id=multi>(1x)</span></button>
 <br><br>
 
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>0</span>
-<button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + 1">Buy</button>
+<button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress
+document.getElementById('multi').innerText = '(' + prestige + 'x)'">Buy</button>
+
 <p>Extremely Uncomfortable Chair</p>
 
 <script>
@@ -34,14 +43,18 @@ document.getElementById(b).style.display = 'none';
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 3){
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1;
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress;
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 3
 }">Trade</button>
-<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + 1" style="display:none">Buy</button>
+<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress" style="display:none">Buy</button>
 <button id="vucub" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200;
+if(prestige < 2){
+prestige = 2;
+}
+document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
 
 <p>Very Uncomfortable Chair</p>
@@ -52,14 +65,18 @@ document.getElementById('euc').innerText = parseInt(document.getElementById('euc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 5){
-document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1;
+document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress;
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5
 }">Trade</button>
-<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + 1" style="display:none">Buy</button>
+<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress" style="display:none">Buy</button>
 <button id="ucub" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300
+if(prestige < 3){
+prestige = 3;
+}
+document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
 <p>Uncomfortable Chair</p>
 
@@ -69,7 +86,7 @@ document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 3){
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + 1;
+document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 3
 }">Trade</button>
 <p>Stone Chair</p>
@@ -80,7 +97,7 @@ document.getElementById('uc').innerText = parseInt(document.getElementById('uc')
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 5){
-document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + 1;
+document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5
 }">Trade</button>
 <p>Splintery Uncomfortable Chair</p>
@@ -91,7 +108,7 @@ document.getElementById('uc').innerText = parseInt(document.getElementById('uc')
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('sc').innerText) >= 3){
-document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + 1;
+document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + progress;
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 3
 }">Trade</button>
 <p>Aluminium Chair</p>
@@ -102,7 +119,7 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('sc').innerText) >= 4){
-document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) + 1;
+document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) + progress;
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 4
 }">Trade</button>
 <p>Brass Chair</p>
@@ -113,7 +130,7 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 <p>Extremely Uncomfortable Chair</p>-->
 <button style="position:relative;left: 20px" onclick="
 if(parseInt(document.getElementById('spuc').innerText) >= 3){
-document.getElementById('quc').innerText = parseInt(document.getElementById('quc').innerText) + 1;
+document.getElementById('quc').innerText = parseInt(document.getElementById('quc').innerText) + progress;
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 3
 }">Trade</button>
 <p>Quite Uncomfortable Chair</p>
@@ -124,7 +141,7 @@ document.getElementById('spuc').innerText = parseInt(document.getElementById('sp
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('brc').innerText) >= 2){
-document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) + 1;
+document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) + progress;
 document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) - 2
 }">Trade</button>
 <p>Steel Chair</p>
@@ -135,7 +152,7 @@ document.getElementById('brc').innerText = parseInt(document.getElementById('brc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('spuc').innerText) >= 5){
-document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) + 1;
+document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) + progress;
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 5
 }">Trade</button>
 <p>Chair</p>
@@ -146,7 +163,7 @@ document.getElementById('spuc').innerText = parseInt(document.getElementById('sp
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('stc').innerText) >= 3){
-document.getElementById('brzc').innerText = parseInt(document.getElementById('brzc').innerText) + 1;
+document.getElementById('brzc').innerText = parseInt(document.getElementById('brzc').innerText) + progress;
 document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 3
 }">Trade</button>
 <p>Bronze Chair</p>
@@ -157,7 +174,7 @@ document.getElementById('stc').innerText = parseInt(document.getElementById('stc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('c').innerText) >= 3){
-document.getElementById('b').innerText = parseInt(document.getElementById('b').innerText) + 1;
+document.getElementById('b').innerText = parseInt(document.getElementById('b').innerText) + progress;
 document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) - 3
 }">Trade</button>
 <p>Bench</p>
@@ -168,7 +185,7 @@ document.getElementById('c').innerText = parseInt(document.getElementById('c').i
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('stc').innerText) >= 5){
-document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) + 1;
+document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) + progress;
 document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 5
 }">Trade</button>
 <p>Copper Chair</p>
@@ -179,7 +196,7 @@ document.getElementById('stc').innerText = parseInt(document.getElementById('stc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('cpc').innerText) >= 75){
-document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) + 1;
+document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) + progress;
 document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) - 75
 }">Trade</button>
 <p>Silver Chair</p>
@@ -190,7 +207,7 @@ document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('slc').innerText) >= 40){
-document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) + 1;
+document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) + progress;
 document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) - 40
 }">Trade</button>
 <p>Platinum Chair</p>
@@ -201,7 +218,7 @@ document.getElementById('slc').innerText = parseInt(document.getElementById('slc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('ptc').innerText) >= 2){
-document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) + 1;
+document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) + progress;
 document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) - 2
 }">Trade</button>
 <p>Gold Chair</p>
@@ -212,7 +229,7 @@ document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc
 <p>Extremely Uncomfortable Chair</p>-->
 <button onclick="
 if(parseInt(document.getElementById('gc').innerText) >= 5){
-document.getElementById('t').innerText = parseInt(document.getElementById('t').innerText) + 1;
+document.getElementById('t').innerText = parseInt(document.getElementById('t').innerText) + progress;
 document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) - 5
 }">Trade</button>
 <p>Throne</p>
