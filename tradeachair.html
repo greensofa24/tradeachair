@@ -24,6 +24,41 @@ ub('ucub', 'ucbuy')
 ">Prestige <span id=multi>(1x)</span></button>
 <br><br>
 
+<button onclick="localStorage.setItem('euc', document.getElementById('euc').innerText);
+localStorage.setItem('vuc', document.getElementById('vuc').innerText);
+localStorage.setItem('uc', document.getElementById('uc').innerText);
+localStorage.setItem('sc', document.getElementById('sc').innerText);
+localStorage.setItem('spuc', document.getElementById('spuc').innerText);
+localStorage.setItem('alc', document.getElementById('alc').innerText);
+localStorage.setItem('brc', document.getElementById('brc').innerText);
+localStorage.setItem('quc', document.getElementById('quc').innerText);
+localStorage.setItem('stc', document.getElementById('stc').innerText);
+localStorage.setItem('c', document.getElementById('c').innerText);
+localStorage.setItem('brzc', document.getElementById('brzc').innerText);
+localStorage.setItem('b', document.getElementById('b').innerText);
+localStorage.setItem('cpc', document.getElementById('cpc').innerText);
+localStorage.setItem('slc', document.getElementById('slc').innerText);
+localStorage.setItem('ptc', document.getElementById('ptc').innerText);
+localStorage.setItem('gc', document.getElementById('gc').innerText);
+localStorage.setItem('t', document.getElementById('t').innerText)">Save</button>
+<button onclick="document.getElementById('euc').innerText = localStorage.getItem('euc');
+document.getElementById('vuc').innerText = localStorage.getItem('vuc');
+document.getElementById('uc').innerText = localStorage.getItem('uc');
+document.getElementById('sc').innerText = localStorage.getItem('sc');
+document.getElementById('spuc').innerText = localStorage.getItem('spuc');
+document.getElementById('alc').innerText = localStorage.getItem('alc');
+document.getElementById('brc').innerText = localStorage.getItem('brc');
+document.getElementById('quc').innerText = localStorage.getItem('quc');
+document.getElementById('stc').innerText = localStorage.getItem('stc');
+document.getElementById('c').innerText = localStorage.getItem('c');
+document.getElementById('brzc').innerText = localStorage.getItem('brzc');
+document.getElementById('b').innerText = localStorage.getItem('b');
+document.getElementById('cpc').innerText = localStorage.getItem('cpc');
+document.getElementById('slc').innerText = localStorage.getItem('slc');
+document.getElementById('ptc').innerText = localStorage.getItem('ptc');
+document.getElementById('gc').innerText = localStorage.getItem('gc');
+document.getElementById('t').innerText = localStorage.getItem('t');">Load</button>
+
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>0</span>
 <button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress
@@ -235,39 +270,5 @@ document.getElementById('gc').innerText = parseInt(document.getElementById('gc')
 }">Trade</button>
 <p>Throne</p>
 
-<button onclick="localStorage.setItem('euc', document.getElementById('euc').innerText);
-localStorage.setItem('vuc', document.getElementById('vuc').innerText);
-localStorage.setItem('uc', document.getElementById('uc').innerText);
-localStorage.setItem('sc', document.getElementById('sc').innerText);
-localStorage.setItem('spuc', document.getElementById('spuc').innerText);
-localStorage.setItem('alc', document.getElementById('alc').innerText);
-localStorage.setItem('brc', document.getElementById('brc').innerText);
-localStorage.setItem('quc', document.getElementById('quc').innerText);
-localStorage.setItem('stc', document.getElementById('stc').innerText);
-localStorage.setItem('c', document.getElementById('c').innerText);
-localStorage.setItem('brzc', document.getElementById('brzc').innerText);
-localStorage.setItem('b', document.getElementById('b').innerText);
-localStorage.setItem('cpc', document.getElementById('cpc').innerText);
-localStorage.setItem('slc', document.getElementById('slc').innerText);
-localStorage.setItem('ptc', document.getElementById('ptc').innerText);
-localStorage.setItem('gc', document.getElementById('gc').innerText);
-localStorage.setItem('t', document.getElementById('t').innerText)">Save</button>
-<button onclick="document.getElementById('euc').innerText = localStorage.getItem('euc');
-document.getElementById('vuc').innerText = localStorage.getItem('vuc');
-document.getElementById('uc').innerText = localStorage.getItem('uc');
-document.getElementById('sc').innerText = localStorage.getItem('sc');
-document.getElementById('spuc').innerText = localStorage.getItem('spuc');
-document.getElementById('alc').innerText = localStorage.getItem('alc');
-document.getElementById('brc').innerText = localStorage.getItem('brc');
-document.getElementById('quc').innerText = localStorage.getItem('quc');
-document.getElementById('stc').innerText = localStorage.getItem('stc');
-document.getElementById('c').innerText = localStorage.getItem('c');
-document.getElementById('brzc').innerText = localStorage.getItem('brzc');
-document.getElementById('b').innerText = localStorage.getItem('b');
-document.getElementById('cpc').innerText = localStorage.getItem('cpc');
-document.getElementById('slc').innerText = localStorage.getItem('slc');
-document.getElementById('ptc').innerText = localStorage.getItem('ptc');
-document.getElementById('gc').innerText = localStorage.getItem('gc');
-document.getElementById('t').innerText = localStorage.getItem('t');">Load</button>
 </body>
 </html>
