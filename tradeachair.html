@@ -256,6 +256,7 @@ function myFunction() {
     5;
   }
   if (code == "200MoreEucForMe" && localStorage.getItem('a') == 'a') {
+    document.getElementById("euc").innerText =
     parseInt(document.getElementById("euc").innerText) + 200;
     localStorage.setItem('a', 'b');
   }
