@@ -63,20 +63,24 @@ document.getElementById('gc').innerText = localStorage.getItem('gc');
 document.getElementById('t').innerText = localStorage.getItem('t');">Load</button>
 <br><br>
 
+<h2>Money: $<span id=money>0</span></h2>
+
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>1</span>
-<button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress;">Buy</button>
-<span id=money>0</span>
+<button onclick="
+if(parseInt(document.getElementById('money').innerText) >= 10){
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress;
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 10
+}">Buy</button>
 
 <script>
 var plus = function() {
 var money = document.getElementById("money");
 var cdollars = parseFloat(money.textContent);
-money.textContent = cdollars + parseInt(document.getElementById('euc').innerText);   
+money.textContent = cdollars + parseInt(document.getElementById('euc').innerText);
 }
 setInterval(plus, 1000);
 </script>
-
 <p>Extremely Uncomfortable Chair</p>
 
 <script>
