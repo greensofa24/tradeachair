@@ -72,15 +72,6 @@ if(parseInt(document.getElementById('money').innerText) >= 10){
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress;
 document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 10
 }">Buy</button>
-
-<script>
-var plus = function() {
-var money = document.getElementById("money");
-var cdollars = parseFloat(money.textContent);
-money.textContent = cdollars + parseInt(document.getElementById('euc').innerText);
-}
-setInterval(plus, 1000);
-</script>
 <p>Extremely Uncomfortable Chair</p>
 
 <script>
@@ -274,6 +265,16 @@ function cheat() {
     localStorage.setItem('a', 'b');
   }
 }
+</script>
+
+<script>
+var plus = function() {
+var money = document.getElementById("money");
+var cdollars = parseFloat(money.textContent);
+money.textContent = cdollars + parseInt(document.getElementById('euc').innerText) + parseInt(document.getElementById('vuc').innerText) * 4 +
+parseInt(document.getElementById('uc').innerText) * 25;
+}
+setInterval(plus, 10000);
 </script>
 
 </body>
