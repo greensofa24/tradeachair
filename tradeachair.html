@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,14 +64,16 @@ document.getElementById('gc').innerText = localStorage.getItem('gc');
 document.getElementById('t').innerText = localStorage.getItem('t');">Load</button>
 <br><br>
 
-<h2>Money: $<span id=money>0</span></h2>
+<h2 id=h2>Money: <span id=money>0</span><span>¢</span></h2>
+
+<h3>Upgrades: </h3>
 
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>1</span>
 <button onclick="
-if(parseInt(document.getElementById('money').innerText) >= 10){
+if(parseInt(document.getElementById('money').innerText) >= 1){
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress;
-document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 10
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 1
 }">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
 
@@ -271,10 +274,26 @@ function cheat() {
 var plus = function() {
 var money = document.getElementById("money");
 var cdollars = parseFloat(money.textContent);
-money.textContent = cdollars + parseInt(document.getElementById('euc').innerText) + parseInt(document.getElementById('vuc').innerText) * 4 +
-parseInt(document.getElementById('uc').innerText) * 25;
+money.textContent = cdollars + parseInt(document.getElementById('euc').innerText) * 100 + parseInt(document.getElementById('vuc').innerText) * 4 +
+parseInt(document.getElementById('uc').innerText) * 25 +
+parseInt(document.getElementById('sc').innerText) * 80 +
+parseInt(document.getElementById('spuc').innerText) * 140 +
+parseInt(document.getElementById('ac').innerText) * 250 +
+parseInt(document.getElementById('brc').innerText) * 340 +
+parseInt(document.getElementById('quc').innerText) * 430 +
+parseInt(document.getElementById('stc').innerText) * 700 +
+parseInt(document.getElementById('c').innerText) * 730 +
+parseInt(document.getElementById('brzc').innerText) * 2200 +
+parseInt(document.getElementById('cpc').innerText) * 3800 +
+parseInt(document.getElementById('slc').innerText) * 300000 +
+parseInt(document.getElementById('ptc').innerText) * 15000000 +
+parseInt(document.getElementById('gc').innerText) * 40000000 +
+parseInt(document.getElementById('t').innerText) * 300000000;
 }
 setInterval(plus, 10000);
+
+/*if (document.getElementById("money") >= 100) {
+document.getElementById("h2").textContent = parseInt(document.getElementById("money")/100;*/
 </script>
 
 </body>
