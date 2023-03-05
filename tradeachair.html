@@ -15,6 +15,8 @@ localStorage.setItem('a', 'a');
 localStorage.setItem('b', 'a');
 var progress = 1;
 var prestige = 1;
+var roundeuc = 1;
+var roundvuc = 1;
 </script>
 
 <button onclick="
@@ -66,7 +68,18 @@ document.getElementById('t').innerText = localStorage.getItem('t');">Load</butto
 <h2 id=h2>Money: <span id=money>0</span><span>¢</span></h2>
 
 <h3>Upgrades: </h3>
-<button>euc x2</button>
+<button id=roundeuc style="width: 23.65%" onmouseover="this.textContent = 'Euc Rent x2'" onmouseout="this.textContent = 'Rounder Eucs (1000¢)'" onclick="
+if(parseInt(document.getElementById('money').innerText) >= 10000){
+round = 2;
+document.getElementById('roundeuc').style.display = 'none';
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 10000
+}">Rounder Eucs (1000¢)</button>
+<button id=roundvuc style="width: 24.615%" onmouseover="this.textContent = 'Vuc Rent x2'" onmouseout="this.textContent = 'Smoother Vucs (5000¢)'" onclick="
+if(parseInt(document.getElementById('money').innerText) >= 10000){
+round = 2;
+document.getElementById('roundvuc').style.display = 'none';
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 10000
+}">Smoother Vucs (5000¢)</button>
 <br><br>
 
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
@@ -275,7 +288,7 @@ function cheat() {
 var plus = function() {
 var money = document.getElementById("money");
 var cdollars = parseFloat(money.textContent);
-money.textContent = cdollars + parseInt(document.getElementById('euc').innerText) * 100 + parseInt(document.getElementById('vuc').innerText) * 4 +
+money.textContent = cdollars + parseInt(document.getElementById('euc').innerText) * 10000 * roundeuc + parseInt(document.getElementById('vuc').innerText) * 4 * roundvuc +
 parseInt(document.getElementById('uc').innerText) * 25 +
 parseInt(document.getElementById('sc').innerText) * 80 +
 parseInt(document.getElementById('spuc').innerText) * 140 +
