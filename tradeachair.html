@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,13 +66,15 @@ document.getElementById('t').innerText = localStorage.getItem('t');">Load</butto
 <h2 id=h2>Money: <span id=money>0</span><span>¢</span></h2>
 
 <h3>Upgrades: </h3>
+<button>euc x2</button>
+<br><br>
 
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>1</span>
 <button onclick="
-if(parseInt(document.getElementById('money').innerText) >= 1){
+if(parseInt(document.getElementById('money').innerText) >= 10){
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress;
-document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 1
+document.getElementById('money').innerText = parseInt(document.getElementById('money').innerText) - 10
 }">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
 
