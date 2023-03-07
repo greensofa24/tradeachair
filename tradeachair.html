@@ -21,6 +21,7 @@ document.getElementById('vuc').innerText = 0;
 progress = prestige;
 ub('vucub', 'vucbuy')
 ub('ucub', 'ucbuy')
+ub('scub', 'scbuy')
 ">Prestige <span id=multi>(1x)</span></button>
 <br><br>
 
@@ -135,6 +136,16 @@ if(parseInt(document.getElementById('uc').innerText) >= 3){
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 3
 }">Trade</button>
+<button id="scbuy" onclick="document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress" style="display:none">Buy</button>
+<button id="scub" onclick="
+if(parseInt(document.getElementById('uc').innerText) >= 400){
+ub('scbuy', 'scub');
+document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 400
+if(prestige < 4){
+prestige = 4;
+}
+document.getElementById('multi').innerText = '(' + prestige + 'x)'
+}">Unlock Buy</button>
 <p>Stone Chair</p>
 
 <img src="https://www.craftparts.com/wp-content/uploads/2019/07/SQM300-3.jpg" width="70">
@@ -144,6 +155,16 @@ if(parseInt(document.getElementById('uc').innerText) >= 5){
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5
 }">Trade</button>
+<button id="spucbuy" onclick="document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress" style="display:none">Buy</button>
+<button id="spucub" onclick="
+if(parseInt(document.getElementById('uc').innerText) >= 500){
+ub('spucbuy', 'spucub');
+document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 500
+if(prestige < 5){
+prestige = 5;
+}
+document.getElementById('multi').innerText = '(' + prestige + 'x)'
+}">Unlock Buy</button>
 <p>Splintery Uncomfortable Chair</p>
 
 <img src="https://www.apexdesign.com/media/catalog/product/cache/24/image/9df78eab33525d08d6e5fb8d27136e95/a/l/aluminium-cross-back-outdoor-chair-1.jpg" width="70">
@@ -153,6 +174,7 @@ if(parseInt(document.getElementById('sc').innerText) >= 3){
 document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + progress;
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 3
 }">Trade</button>
+
 <p>Aluminium Chair</p>
 
 <img src="https://static.havenly.com/product/production/php_59a6e65249d74.jpg" width="70">
