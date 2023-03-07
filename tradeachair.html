@@ -61,6 +61,21 @@ document.getElementById('gc').innerText = localStorage.getItem('gc');
 document.getElementById('t').innerText = localStorage.getItem('t');">Load</button>
 <br><br>
 
+<h3>Upgrades: </h3>
+<button id=roundeuc style="width: 12%" onmouseover="this.textContent = 'Euc x2'" onmouseout="this.textContent = 'Rounder Eucs (1000euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 10000){
+round = 2;
+document.getElementById('roundeuc').style.display = 'none';
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000
+}">Rounder Eucs (1000¢)</button>
+<button id=roundvuc style="width: 12%" onmouseover="this.textContent = 'Vuc x2'" onmouseout="this.textContent = 'Smoother Vucs (5000vuc)'" onclick="
+if(parseInt(document.getElementById('vuc').innerText) >= 10000){
+round = 2;
+document.getElementById('roundvuc').style.display = 'none';
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 10000
+}">Smoother Vucs (5000¢)</button>
+<br><br>
+
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>0</span>
 <button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress
