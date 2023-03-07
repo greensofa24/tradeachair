@@ -62,13 +62,13 @@ document.getElementById('t').innerText = localStorage.getItem('t');">Load</butto
 <br><br>
 
 <h3>Upgrades: </h3>
-<button id=roundeuc style="width: 12%" onmouseover="this.textContent = 'Euc x2'" onmouseout="this.textContent = 'Rounder Eucs (1000euc)'" onclick="
+<button id=roundeuc style="width: 13%" onmouseover="this.textContent = 'Euc x2'" onmouseout="this.textContent = 'Rounder Eucs (1000euc)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 10000){
 round = 2;
 document.getElementById('roundeuc').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000
 }">Rounder Eucs (1000¢)</button>
-<button id=roundvuc style="width: 12%" onmouseover="this.textContent = 'Vuc x2'" onmouseout="this.textContent = 'Smoother Vucs (5000vuc)'" onclick="
+<button id=roundvuc style="width: 13%" onmouseover="this.textContent = 'Vuc x2'" onmouseout="this.textContent = 'Smoother Vucs (5000vuc)'" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 10000){
 round = 2;
 document.getElementById('roundvuc').style.display = 'none';
