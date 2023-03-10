@@ -16,6 +16,7 @@ var prestige = 1;
 var reuc = 1;
 var rvuc = 1;
 var ruc = 1;
+var rsc = 1;
 var d = 0;
 </script>
 
@@ -46,6 +47,8 @@ localStorage.setItem('slc', document.getElementById('slc').innerText);
 localStorage.setItem('ptc', document.getElementById('ptc').innerText);
 localStorage.setItem('gc', document.getElementById('gc').innerText);
 localStorage.setItem('t', document.getElementById('t').innerText);
+localStorage.setItem('mc', document.getElementById('mc').innerText);
+localStorage.setItem('dc', document.getElementById('dc').innerText);
 localStorage.setItem('progress', progress);
 localStorage.setItem('prestige', prestige)
 ">Save</button>
@@ -66,6 +69,8 @@ document.getElementById('slc').innerText = localStorage.getItem('slc');
 document.getElementById('ptc').innerText = localStorage.getItem('ptc');
 document.getElementById('gc').innerText = localStorage.getItem('gc');
 document.getElementById('t').innerText = localStorage.getItem('t');
+document.getElementById('mc').innerText = localStorage.getItem('mc');
+document.getElementById('dc').innerText = localStorage.getItem('dc');
 progress = localStorage.getItem('progress');
 prestige = localStorage.getItem('prestige')
 ">Load</button>
@@ -78,18 +83,24 @@ reuc = 2;
 document.getElementById('roundeuc').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000
 }">Rounder Eucs (1000euc)</button>
-<button id=roundvuc style="width: 13%" onmouseover="this.textContent = 'Vuc x2'" onmouseout="this.textContent = 'Smoother Vucs (2000vuc)'" onclick="
-if(parseInt(document.getElementById('vuc').innerText) >= 2000){
+<button id=roundvuc style="width: 13%" onmouseover="this.textContent = 'Vuc x2'" onmouseout="this.textContent = 'Smoother Vucs (2500vuc)'" onclick="
+if(parseInt(document.getElementById('vuc').innerText) >= 2500){
 rvuc = 2;
 document.getElementById('roundvuc').style.display = 'none';
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 2000
-}">Smoother Vucs (2000vuc)</button>
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 2500
+}">Smoother Vucs (2500vuc)</button>
 <button id=rounduc style="width: 13%" onmouseover="this.textContent = 'Uc x2'" onmouseout="this.textContent = 'Warmer Ucs (5000uc)'" onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 5000){
 ruc = 2;
 document.getElementById('rounduc').style.display = 'none';
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5000
 }">Warmer Ucs (5000uc)</button>
+<button id=roundsc style="width: 13%" onmouseover="this.textContent = 'Sc x2'" onmouseout="this.textContent = 'Bigger Scs (7500sc)'" onclick="
+if(parseInt(document.getElementById('sc').innerText) >= 7500){
+rsc = 2;
+document.getElementById('roundsc').style.display = 'none';
+document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 7500
+}">Bigger Scs (7500sc)</button>
 <br><br>
 
 <img src="https://cdn.shopify.com/s/files/1/0261/6809/8904/products/5f51da29e24c5d04e15b11e9_52aa7b63-3c94-4ea0-b028-aee9510045ca_300x300.png?v=1676757837" width="70">
@@ -119,7 +130,7 @@ if(parseInt(document.getElementById('euc').innerText) >= 3){
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * rvuc;
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 3
 }">Trade</button>
-<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress" style="display:none">Buy</button>
+<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * rvuc" style="display:none">Buy</button>
 <button id="vucub" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
@@ -139,7 +150,7 @@ if(parseInt(document.getElementById('vuc').innerText) >= 5){
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress  * ruc;
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5
 }">Trade</button>
-<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress" style="display:none">Buy</button>
+<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress * ruc" style="display:none">Buy</button>
 <button id="ucub" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
@@ -155,10 +166,10 @@ document.getElementById('multi').innerText = '(' + prestige + 'x)'
 <span id=sc>0</span>
 <button onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 3){
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress;
+document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress * rsc;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 3
 }">Trade</button>
-<button id="scbuy" onclick="document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress" style="display:none">Buy</button>
+<button id="scbuy" onclick="document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress * rsc" style="display:none">Buy</button>
 <button id="scub" onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 400){
 ub('scbuy', 'scub');
