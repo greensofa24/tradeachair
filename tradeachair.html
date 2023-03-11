@@ -18,6 +18,22 @@ var rvuc = 1;
 var ruc = 1;
 var rsc = 1;
 var d = 0;
+var vucmake = 0;
+var ucmake = 0;
+var scmake = 0;
+var spucmake = 0;
+var acmake = 0;
+var brcmake = 0;
+var qucmake = 0;
+var stcmake = 0;
+var cmake = 0;
+var brzcmake = 0;
+var bmake = 0;
+var cpcmake = 0;
+var slcmake = 0;
+var ptcmake = 0;
+var gcmake = 0;
+var tmake = 0;
 </script>
 
 <button onclick="
@@ -112,7 +128,16 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 <span id=euc>0</span>
 <button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress * reuc;
 d += 0.01;
-document.getElementById('dc').innerText = Math.floor(d)">Buy</button>
+document.getElementById('dc').innerText = Math.floor(d);
+vucmake += 1;
+if(vucmake >= 3) {
+document.getElementsByClassName('vucname')[0].style.display = 'inline';
+document.getElementsByClassName('vucname')[1].style.display = 'inline';
+document.getElementsByClassName('vucname')[2].style.display = 'block';
+document.getElementById('vuc').style.display = 'inline';
+document.getElementById('vucub').style.display = 'inline';
+}
+">Buy</button>
 
 <p>Extremely Uncomfortable Chair</p>
 
@@ -123,15 +148,31 @@ document.getElementById(b).style.display = 'none';
 }
 </script>
 
-<img src="https://www.eosworldwide.com/wp-content/uploads/2020/01/Rocks_for_all_simplified.jpg" width="70">
-<span id=vuc>0</span>
-<button onclick="
+<img class=vucname style="display:none" src="https://www.eosworldwide.com/wp-content/uploads/2020/01/Rocks_for_all_simplified.jpg" width="70">
+<span id=vuc style="display:none">0</span>
+<button class=vucname style="display:none" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 3){
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * rvuc;
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 3
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 3;
+ucmake += 1;
+if(ucmake >= 5) {
+document.getElementsByClassName('ucname')[0].style.display = 'inline';
+document.getElementsByClassName('ucname')[1].style.display = 'inline';
+document.getElementsByClassName('ucname')[2].style.display = 'block';
+document.getElementById('uc').style.display = 'inline';
+document.getElementById('ucub').style.display = 'inline';
+}
 }">Trade</button>
-<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * rvuc" style="display:none">Buy</button>
-<button id="vucub" onclick="
+<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * rvuc;
+}
+ucmake += 1;
+if(ucmake >= 5) {
+document.getElementsByClassName('ucname')[0].style.display = 'inline';
+document.getElementsByClassName('ucname')[1].style.display = 'inline';
+document.getElementsByClassName('ucname')[2].style.display = 'block';
+document.getElementById('uc').style.display = 'inline';
+document.getElementById('ucub').style.display = 'inline';" style="display:none">Buy</button>
+<button style="display:none" id="vucub" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200;
@@ -141,17 +182,50 @@ prestige = 2;
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
 
-<p>Very Uncomfortable Chair</p>
+<p class=vucname style="display:none">Very Uncomfortable Chair</p>
+<p></p>
 
-<img src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
-<span id=uc>0</span>
-<button onclick="
+<img class=ucname style="display:none" src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
+<span style="display:none" id=uc>0</span>
+<button class=ucname style="display:none" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 5){
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress  * ruc;
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5;
+scmake += 1;
+if(scmake >= 3) {
+document.getElementsByClassName('scname')[0].style.display = 'inline';
+document.getElementsByClassName('scname')[1].style.display = 'inline';
+document.getElementsByClassName('scname')[2].style.display = 'block';
+document.getElementById('sc').style.display = 'inline';
+document.getElementById('scub').style.display = 'inline';
+}
+spucmake += 1;
+if(spucmake >= 5) {
+document.getElementsByClassName('spucname')[0].style.display = 'inline';
+document.getElementsByClassName('spucname')[1].style.display = 'inline';
+document.getElementsByClassName('spucname')[2].style.display = 'block';
+document.getElementById('spuc').style.display = 'inline';
+document.getElementById('spucub').style.display = 'inline';
+}
 }">Trade</button>
-<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress * ruc" style="display:none">Buy</button>
-<button id="ucub" onclick="
+<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress * ruc;
+scmake += 1;
+if(scmake >= 3) {
+document.getElementsByClassName('scname')[0].style.display = 'inline';
+document.getElementsByClassName('scname')[1].style.display = 'inline';
+document.getElementsByClassName('scname')[2].style.display = 'block';
+document.getElementById('sc').style.display = 'inline';
+document.getElementById('scub').style.display = 'inline';
+}
+spucmake += 1;
+if(spucmake >= 5) {
+document.getElementsByClassName('spucname')[0].style.display = 'inline';
+document.getElementsByClassName('spucname')[1].style.display = 'inline';
+document.getElementsByClassName('spucname')[2].style.display = 'block';
+document.getElementById('spuc').style.display = 'inline';
+document.getElementById('spucub').style.display = 'inline';
+}" style="display:none">Buy</button>
+<button style="display:none" id="ucub" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300
@@ -160,17 +234,31 @@ prestige = 3;
 }
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
-<p>Uncomfortable Chair</p>
+<p class=ucname style="display:none">Uncomfortable Chair</p>
 
-<img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
-<span id=sc>0</span>
-<button onclick="
+<img class=scname style="display:none" src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
+<span style="display:none" id=sc>0</span>
+<button class=scname style="display:none" onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 3){
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress * rsc;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 3
+acmake += 1;
+if(acmake >= 3) {
+document.getElementsByClassName('acname')[0].style.display = 'inline';
+document.getElementsByClassName('acname')[1].style.display = 'inline';
+document.getElementsByClassName('acname')[2].style.display = 'block';
+document.getElementById('ac').style.display = 'inline';
+}
+brcmake += 1;
+if(brcmake >= 4) {
+document.getElementsByClassName('brcname')[0].style.display = 'inline';
+document.getElementsByClassName('brcname')[1].style.display = 'inline';
+document.getElementsByClassName('brcname')[2].style.display = 'block';
+document.getElementById('brc').style.display = 'inline';
+}
 }">Trade</button>
 <button id="scbuy" onclick="document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress * rsc" style="display:none">Buy</button>
-<button id="scub" onclick="
+<button style="display:none" id="scub" onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 400){
 ub('scbuy', 'scub');
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 400
@@ -179,17 +267,45 @@ prestige = 4;
 }
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
-<p>Stone Chair</p>
+<p class=scname style="display:none">Stone Chair</p>
 
-<img src="https://www.craftparts.com/wp-content/uploads/2019/07/SQM300-3.jpg" width="70">
-<span id=spuc>0</span>
-<button onclick="
+<img class=spucname style="display:none" src="https://www.craftparts.com/wp-content/uploads/2019/07/SQM300-3.jpg" width="70">
+<span style="display:none" id=spuc>0</span>
+<button class=spucname style="display:none" onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 5){
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress;
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5
+qucmake += 1;
+if(qucmake >= 3) {
+document.getElementsByClassName('qucname')[0].style.display = 'inline';
+document.getElementsByClassName('qucname')[1].style.display = 'inline';
+document.getElementsByClassName('qucname')[2].style.display = 'block';
+document.getElementById('quc').style.display = 'inline';
+}
+cmake += 1;
+if(cmake >= 5) {
+document.getElementsByClassName('cname')[0].style.display = 'inline';
+document.getElementsByClassName('cname')[1].style.display = 'inline';
+document.getElementsByClassName('cname')[2].style.display = 'block';
+document.getElementById('c').style.display = 'inline';
+}
 }">Trade</button>
-<button id="spucbuy" onclick="document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress" style="display:none">Buy</button>
-<button id="spucub" onclick="
+<button id="spucbuy" onclick="document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress;
+qucmake += 1;
+if(qucmake >= 3) {
+document.getElementsByClassName('qucname')[0].style.display = 'inline';
+document.getElementsByClassName('qucname')[1].style.display = 'inline';
+document.getElementsByClassName('qucname')[2].style.display = 'block';
+document.getElementById('quc').style.display = 'inline';
+}
+cmake += 1;
+if(cmake >= 5) {
+document.getElementsByClassName('cname')[0].style.display = 'inline';
+document.getElementsByClassName('cname')[1].style.display = 'inline';
+document.getElementsByClassName('cname')[2].style.display = 'block';
+document.getElementById('c').style.display = 'inline';
+}" style="display:none">Buy</button>
+<button style="display:none" id="spucub" onclick="
 if(parseInt(document.getElementById('uc').innerText) >= 500){
 ub('spucbuy', 'spucub');
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 500
@@ -198,116 +314,172 @@ prestige = 5;
 }
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
-<p>Splintery Uncomfortable Chair</p>
+<p class=spucname style="display:none">Splintery Uncomfortable Chair</p>
 
-<img src="https://www.apexdesign.com/media/catalog/product/cache/24/image/9df78eab33525d08d6e5fb8d27136e95/a/l/aluminium-cross-back-outdoor-chair-1.jpg" width="70">
-<span id=ac>0</span>
-<button onclick="
+<img class=alcname style="display:none" src="https://www.apexdesign.com/media/catalog/product/cache/24/image/9df78eab33525d08d6e5fb8d27136e95/a/l/aluminium-cross-back-outdoor-chair-1.jpg" width="70">
+<span style="display:none" id=ac>0</span>
+<button class=alcname style="display:none" onclick="
 if(parseInt(document.getElementById('sc').innerText) >= 3){
 document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + progress;
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 3
 }">Trade</button>
 
-<p>Aluminium Chair</p>
+<p class=alcname style="display:none">Aluminium Chair</p>
 
-<img src="https://static.havenly.com/product/production/php_59a6e65249d74.jpg" width="70">
-<span id=brc>0</span>
-<button onclick="
+<img class=brcname style="display:none" src="https://static.havenly.com/product/production/php_59a6e65249d74.jpg" width="70">
+<span style="display:none" id=brc>0</span>
+<button class=cname style="display:none" onclick="
 if(parseInt(document.getElementById('sc').innerText) >= 4){
 document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) + progress;
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 4
+document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 4;
+stcmake += 1;
+if(stcmake >= 5) {
+document.getElementsByClassName('stcname')[0].style.display = 'inline';
+document.getElementsByClassName('stcname')[1].style.display = 'inline';
+document.getElementsByClassName('stcname')[2].style.display = 'block';
+document.getElementById('stc').style.display = 'inline';
+}
 }">Trade</button>
-<p>Brass Chair</p>
+<p class=brcname style="display:none">Brass Chair</p>
 
-<img src="https://st.hzcdn.com/fimgs/28e1ac030f625e4e_4080-w300-h300-b1-p0--.jpg" width="50" style="position:relative;left: 10px">
-<span id=quc style="position:relative;left: 20px">0</span>
-<button style="position:relative;left: 20px" onclick="
+<img class=qucname style="display:none" src="https://st.hzcdn.com/fimgs/28e1ac030f625e4e_4080-w300-h300-b1-p0--.jpg" width="50" style="position:relative;left: 10px">
+<span id=quc style="position:relative;left: 20px;display:none">0</span>
+<button class=qucname style="display:none" style="position:relative;left: 20px" onclick="
 if(parseInt(document.getElementById('spuc').innerText) >= 3){
 document.getElementById('quc').innerText = parseInt(document.getElementById('quc').innerText) + progress;
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 3
 }">Trade</button>
-<p>Quite Uncomfortable Chair</p>
+<p class=qucname style="display:none">Quite Uncomfortable Chair</p>
 
-<img src="https://media.nisbets.com/asset/core/prodimage/large_new/gl329_5.jpg" width="70">
-<span id=stc>0</span>
-<button onclick="
+<img class=stcname style="display:none" src="https://media.nisbets.com/asset/core/prodimage/large_new/gl329_5.jpg" width="70">
+<span style="display:none" id=stc>0</span>
+<button class=stcname style="display:none" onclick="
 if(parseInt(document.getElementById('brc').innerText) >= 2){
 document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) + progress;
-document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) - 2
+document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) - 2;
+brzcmake += 1;
+if(brzcmake >= 3) {
+document.getElementsByClassName('brzcname')[0].style.display = 'inline';
+document.getElementsByClassName('brzcname')[1].style.display = 'inline';
+document.getElementsByClassName('brzcname')[2].style.display = 'block';
+document.getElementById('brzc').style.display = 'inline';
+}
+cpcmake += 1;
+if(cpcmake >= 5) {
+document.getElementsByClassName('cpcname')[0].style.display = 'inline';
+document.getElementsByClassName('cpcname')[1].style.display = 'inline';
+document.getElementsByClassName('cpcname')[2].style.display = 'block';
+document.getElementById('cpc').style.display = 'inline';
+}
 }">Trade</button>
-<p>Steel Chair</p>
+<p class=stcname style="display:none">Steel Chair</p>
 
-<img src="https://www.shack.com.au/wp-content/uploads/CHATEAU-DINING-CHAIR-SIDE.jpg" width="70">
-<span id=c>0</span>
-<button onclick="
+<img class=cname style="display:none" src="https://www.shack.com.au/wp-content/uploads/CHATEAU-DINING-CHAIR-SIDE.jpg" width="70">
+<span style="display:none" id=c>0</span>
+<button class=cname style="display:none" onclick="
 if(parseInt(document.getElementById('spuc').innerText) >= 5){
 document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) + progress;
-document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 5
+document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 5;
+bmake += 1;
+if(bmake >= 5) {
+document.getElementsByClassName('bname')[0].style.display = 'inline';
+document.getElementsByClassName('bname')[1].style.display = 'inline';
+document.getElementsByClassName('bname')[2].style.display = 'block';
+document.getElementById('b').style.display = 'inline';
+}
 }">Trade</button>
-<p>Chair</p>
+<p class=cname style="display:none">Chair</p>
 
-<img src="https://cdn.myportfolio.com/7e2b3e9ad6427ce7868402c4a32f5580/90164cffbd848e968cb733c3_rw_1200.jpg?h=32fff8339d92ca2bac10dd7474222adc" width="70">
-<span id=brzc>0</span>
-<button onclick="
+<img class=brzcname style="display:none" src="https://cdn.myportfolio.com/7e2b3e9ad6427ce7868402c4a32f5580/90164cffbd848e968cb733c3_rw_1200.jpg?h=32fff8339d92ca2bac10dd7474222adc" width="70">
+<span style="display:none" id=brzc>0</span>
+<button class=brzcname style="display:none" onclick="
 if(parseInt(document.getElementById('stc').innerText) >= 3){
 document.getElementById('brzc').innerText = parseInt(document.getElementById('brzc').innerText) + progress;
 document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 3
 }">Trade</button>
-<p>Bronze Chair</p>
+<p class=brzcname style="display:none">Bronze Chair</p>
 
-<img src="https://www.mitre10.com.au/media/catalog/product/6/1/6153613-0_3.jpg?optimize=high&fit=bounds&height=840&width=840&canvas=840:840" width="70">
-<span id=b>0</span>
-<button onclick="
+<img class=bname style="display:none" src="https://www.mitre10.com.au/media/catalog/product/6/1/6153613-0_3.jpg?optimize=high&fit=bounds&height=840&width=840&canvas=840:840" width="70">
+<span style="display:none" id=b>0</span>
+<button class=bname style="display:none" onclick="
 if(parseInt(document.getElementById('c').innerText) >= 3){
 document.getElementById('b').innerText = parseInt(document.getElementById('b').innerText) + progress;
 document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) - 3
 }">Trade</button>
-<p>Bench</p>
+<p class=bname style="display:none">Bench</p>
 
-<img src="https://haveaseat.com.au/wp-content/uploads/2021/12/MG_0270-2.jpg" width="70">
-<span id=cpc>0</span>
-<button onclick="
+<img class=cpcname style="display:none" src="https://haveaseat.com.au/wp-content/uploads/2021/12/MG_0270-2.jpg" width="70">
+<span style="display:none" id=cpc>0</span>
+<button class=cpcname style="display:none"onclick="
 if(parseInt(document.getElementById('stc').innerText) >= 5){
 document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) + progress;
-document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 5
+document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 5;
+slcmake += 1;
+if(slcmake >= 75) {
+document.getElementsByClassName('slcname')[0].style.display = 'inline';
+document.getElementsByClassName('slcname')[1].style.display = 'inline';
+document.getElementsByClassName('slcname')[2].style.display = 'block';
+document.getElementById('slc').style.display = 'inline';
+}
 }">Trade</button>
-<p>Copper Chair</p>
+<p class=cpcname style="display:none">Copper Chair</p>
 
-<img src="http://cdn.shopify.com/s/files/1/0036/9881/9187/products/crystal_tiff_no_cush_1400x.jpg?v=1528849709" width="70">
-<span id=slc>0</span>
-<button onclick="
+<img class=slcname style="display:none" src="http://cdn.shopify.com/s/files/1/0036/9881/9187/products/crystal_tiff_no_cush_1400x.jpg?v=1528849709" width="70">
+<span style="display:none" id=slc>0</span>
+<button class=slcname style="display:none" onclick="
 if(parseInt(document.getElementById('cpc').innerText) >= 75){
 document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) + progress;
-document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) - 75
+document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) - 75;
+ptcmake += 1;
+if(ptcmake >= 5) {
+document.getElementsByClassName('ptcname')[0].style.display = 'inline';
+document.getElementsByClassName('ptcname')[1].style.display = 'inline';
+document.getElementsByClassName('ptcname')[2].style.display = 'block';
+document.getElementById('ptc').style.display = 'inline';
+}
 }">Trade</button>
-<p>Silver Chair</p>
+<p class=slcname style="display:none">Silver Chair</p>
 
-<img src="https://www.ergohuman.com.au/img/ERG-LPGM-HRL-1.jpg" width="70">
-<span id=ptc>0</span>
-<button onclick="
+<img class=ptcname style="display:none" src="https://www.ergohuman.com.au/img/ERG-LPGM-HRL-1.jpg" width="70">
+<span style="display:none" id=ptc>0</span>
+<button class=ptcname style="display:none" onclick="
 if(parseInt(document.getElementById('slc').innerText) >= 40){
 document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) + progress;
-document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) - 40
+document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) - 40;
+gcmake += 1;
+if(gcmake >= 2) {
+document.getElementsByClassName('gcname')[0].style.display = 'inline';
+document.getElementsByClassName('gcname')[1].style.display = 'inline';
+document.getElementsByClassName('gcname')[2].style.display = 'block';
+document.getElementById('gc').style.display = 'inline';
+}
 }">Trade</button>
-<p>Platinum Chair</p>
+<p class=ptcname style="display:none">Platinum Chair</p>
 
-<img src="https://cqpartyhire.com.au/wp-content/uploads/2018/05/Gold-Tiffany-chair-1.jpg" width="70">
-<span id=gc>0</span>
-<button onclick="
+<img class=gcname style="display:none" src="https://cqpartyhire.com.au/wp-content/uploads/2018/05/Gold-Tiffany-chair-1.jpg" width="70">
+<span style="display:none" id=gc>0</span>
+<button class=gcname style="display:none" onclick="
 if(parseInt(document.getElementById('ptc').innerText) >= 2){
 document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) + progress;
-document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) - 2
+document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) - 2;
+tmake += 1;
+if(tmake >= 5) {
+document.getElementsByClassName('tname')[0].style.display = 'inline';
+document.getElementsByClassName('tname')[1].style.display = 'inline';
+document.getElementsByClassName('tname')[2].style.display = 'block';
+document.getElementById('t').style.display = 'inline';
+}
 }">Trade</button>
-<p>Gold Chair</p>
+<p class=gcname style="display:none">Gold Chair</p>
 
-<img src="https://moreproduction.co.uk/wp-content/uploads/King_Throne.jpg" width="70">
-<span id=t>0</span>
-<button onclick="
+<img class=tname style="display:none" src="https://moreproduction.co.uk/wp-content/uploads/King_Throne.jpg" width="70">
+<span style="display:none" id=t>0</span>
+<button class=tname style="display:none" onclick="
 if(parseInt(document.getElementById('gc').innerText) >= 5){
 document.getElementById('t').innerText = parseInt(document.getElementById('t').innerText) + progress;
 document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) - 5
 }">Trade</button>
-<p>Throne</p>
+<p class=tname style="display:none">Throne</p>
 
 <img src="https://greensofa24.github.io/tradeachair/magicchair.png" width="70">
 <span id=mc>0</span>
