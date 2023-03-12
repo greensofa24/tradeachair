@@ -244,10 +244,10 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 3
 acmake += 1;
 if(acmake >= 3) {
-document.getElementsByClassName('acname')[0].style.display = 'inline';
-document.getElementsByClassName('acname')[1].style.display = 'inline';
-document.getElementsByClassName('acname')[2].style.display = 'block';
-document.getElementById('ac').style.display = 'inline';
+document.getElementsByClassName('alcname')[0].style.display = 'inline';
+document.getElementsByClassName('alcname')[1].style.display = 'inline';
+document.getElementsByClassName('alcname')[2].style.display = 'block';
+document.getElementById('alc').style.display = 'inline';
 }
 brcmake += 1;
 if(brcmake >= 4) {
@@ -316,10 +316,10 @@ document.getElementById('multi').innerText = '(' + prestige + 'x)'
 <p class=spucname style="display:none">Splintery Uncomfortable Chair</p>
 
 <img class=alcname style="display:none" src="https://www.apexdesign.com/media/catalog/product/cache/24/image/9df78eab33525d08d6e5fb8d27136e95/a/l/aluminium-cross-back-outdoor-chair-1.jpg" width="70">
-<span style="display:none" id=ac>0</span>
+<span style="display:none" id=alc>0</span>
 <button class=alcname style="display:none" onclick="
 if(parseInt(document.getElementById('sc').innerText) >= 3){
-document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + progress;
+document.getElementById('alc').innerText = parseInt(document.getElementById('alc').innerText) + progress;
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 3
 }">Trade</button>
 
@@ -380,7 +380,7 @@ if(parseInt(document.getElementById('spuc').innerText) >= 5){
 document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) + progress;
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 5;
 bmake += 1;
-if(bmake >= 5) {
+if(bmake >= 3) {
 document.getElementsByClassName('bname')[0].style.display = 'inline';
 document.getElementsByClassName('bname')[1].style.display = 'inline';
 document.getElementsByClassName('bname')[2].style.display = 'block';
