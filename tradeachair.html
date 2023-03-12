@@ -277,10 +277,10 @@ document.getElementById('spuc').innerText = parseInt(document.getElementById('sp
 document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5
 qucmake += 1;
 if(qucmake >= 3) {
-document.getElementsByClassName('qucname')[0].style.display = 'inline';
-document.getElementsByClassName('qucname')[1].style.display = 'inline';
+document.getElementsByClassName('qucname')[0].style = 'display:inline;position:relative;left: 10px'
+document.getElementsByClassName('qucname')[1].style = 'display:inline;position:relative;left: 20px';
 document.getElementsByClassName('qucname')[2].style.display = 'block';
-document.getElementById('quc').style.display = 'inline';
+document.getElementById('quc').style = 'display:inline;position:relative;left: 20px';
 }
 cmake += 1;
 if(cmake >= 5) {
@@ -293,10 +293,9 @@ document.getElementById('c').style.display = 'inline';
 <button id="spucbuy" onclick="document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress;
 qucmake += 1;
 if(qucmake >= 3) {
-document.getElementsByClassName('qucname')[0].style.display = 'inline';
-document.getElementsByClassName('qucname')[1].style.display = 'inline';
-document.getElementsByClassName('qucname')[2].style.display = 'block';
-document.getElementById('quc').style.display = 'inline';
+document.getElementsByClassName('qucname')[0].style = 'display:inline;position:relative;left: 10px'
+document.getElementsByClassName('qucname')[1].style = 'display:inline;position:relative;left: 20px';
+document.getElementById('quc').style = 'display:inline;position:relative;left: 20px';
 }
 cmake += 1;
 if(cmake >= 5) {
@@ -328,7 +327,7 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 
 <img class=brcname style="display:none" src="https://static.havenly.com/product/production/php_59a6e65249d74.jpg" width="70">
 <span style="display:none" id=brc>0</span>
-<button class=cname style="display:none" onclick="
+<button class=brcname style="display:none" onclick="
 if(parseInt(document.getElementById('sc').innerText) >= 4){
 document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) + progress;
 document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 4;
@@ -342,9 +341,9 @@ document.getElementById('stc').style.display = 'inline';
 }">Trade</button>
 <p class=brcname style="display:none">Brass Chair</p>
 
-<img class=qucname style="display:none" src="https://st.hzcdn.com/fimgs/28e1ac030f625e4e_4080-w300-h300-b1-p0--.jpg" width="50" style="position:relative;left: 10px">
-<span id=quc style="position:relative;left: 20px;display:none">0</span>
-<button class=qucname style="display:none" style="position:relative;left: 20px" onclick="
+<img class=qucname style="display:none" src="https://st.hzcdn.com/fimgs/28e1ac030f625e4e_4080-w300-h300-b1-p0--.jpg" width="50">
+<span id=quc style="display:none">0</span>
+<button class=qucname style="display:none" onclick="
 if(parseInt(document.getElementById('spuc').innerText) >= 3){
 document.getElementById('quc').innerText = parseInt(document.getElementById('quc').innerText) + progress;
 document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 3
