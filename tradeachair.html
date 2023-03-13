@@ -183,6 +183,23 @@ document.getElementById('vucub').style.display = 'inline';
 
 <p>Extremely Uncomfortable Chair</p>
 
+<img src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
+<span id=euc>0</span>
+<button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress * reuc;
+d += 0.01;
+document.getElementById('dc').innerText = Math.floor(d);
+vucmake += 1;
+if(vucmake >= 3) {
+document.getElementsByClassName('vucname')[0].style.display = 'inline';
+document.getElementsByClassName('vucname')[1].style.display = 'inline';
+document.getElementsByClassName('vucname')[2].style.display = 'block';
+document.getElementById('vuc').style.display = 'inline';
+document.getElementById('vucub').style.display = 'inline';
+}
+">Buy</button>
+
+<p>Extremely Uncomfortable Autochair</p>
+
 <script>
 function ub(a, b) {
 document.getElementById(a).style.display = 'inline';
