@@ -46,7 +46,8 @@ ub('scub', 'scbuy')
 ">Prestige <span id=multi>(1x)</span></button>
 <br><br>
 
-<button onclick="localStorage.setItem('euc', document.getElementById('euc').innerText);
+<button onclick="localStorage.setItem('body', document.body.innerHTML);
+localStorage.setItem('euc', document.getElementById('euc').innerText);
 localStorage.setItem('vuc', document.getElementById('vuc').innerText);
 localStorage.setItem('uc', document.getElementById('uc').innerText);
 localStorage.setItem('sc', document.getElementById('sc').innerText);
@@ -88,7 +89,8 @@ localStorage.setItem('slcmake', slcmake);
 localStorage.setItem('ptcmake', ptcmake);
 localStorage.setItem('gcmake', gcmake);
 localStorage.setItem('tmake', tmake)">Save</button>
-<button onclick="document.getElementById('euc').innerText = localStorage.getItem('euc');
+<button onclick="document.body.innerHTML = localStorage.getItem('body');
+document.getElementById('euc').innerText = localStorage.getItem('euc');
 document.getElementById('vuc').innerText = localStorage.getItem('vuc');
 document.getElementById('uc').innerText = localStorage.getItem('uc');
 document.getElementById('sc').innerText = localStorage.getItem('sc');
