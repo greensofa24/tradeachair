@@ -34,6 +34,7 @@ var slcmake = 0;
 var ptcmake = 0;
 var gcmake = 0;
 var tmake = 0;
+var aeuc = 0;
 </script>
 
 <button onclick="
@@ -47,6 +48,25 @@ ub('scub', 'scbuy')
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
+localStorage.setItem('euc', document.getElementById('euc').innerText);
+localStorage.setItem('vuc', document.getElementById('vuc').innerText);
+localStorage.setItem('uc', document.getElementById('uc').innerText);
+localStorage.setItem('sc', document.getElementById('sc').innerText);
+localStorage.setItem('spuc', document.getElementById('spuc').innerText);
+localStorage.setItem('alc', document.getElementById('alc').innerText);
+localStorage.setItem('brc', document.getElementById('brc').innerText);
+localStorage.setItem('quc', document.getElementById('quc').innerText);
+localStorage.setItem('stc', document.getElementById('stc').innerText);
+localStorage.setItem('c', document.getElementById('c').innerText);
+localStorage.setItem('brzc', document.getElementById('brzc').innerText);
+localStorage.setItem('b', document.getElementById('b').innerText);
+localStorage.setItem('cpc', document.getElementById('cpc').innerText);
+localStorage.setItem('slc', document.getElementById('slc').innerText);
+localStorage.setItem('ptc', document.getElementById('ptc').innerText);
+localStorage.setItem('gc', document.getElementById('gc').innerText);
+localStorage.setItem('t', document.getElementById('t').innerText);
+localStorage.setItem('mc', document.getElementById('mc').innerText);
+localStorage.setItem('dc', document.getElementById('dc').innerText);
 localStorage.setItem('progress', progress);
 localStorage.setItem('prestige', prestige);
 localStorage.setItem('reuc', reuc);
@@ -71,29 +91,48 @@ localStorage.setItem('ptcmake', ptcmake);
 localStorage.setItem('gcmake', gcmake);
 localStorage.setItem('tmake', tmake)">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
+document.getElementById('euc').innerText = localStorage.getItem('euc');
+document.getElementById('vuc').innerText = localStorage.getItem('vuc');
+document.getElementById('uc').innerText = localStorage.getItem('uc');
+document.getElementById('sc').innerText = localStorage.getItem('sc');
+document.getElementById('spuc').innerText = localStorage.getItem('spuc');
+document.getElementById('alc').innerText = localStorage.getItem('alc');
+document.getElementById('brc').innerText = localStorage.getItem('brc');
+document.getElementById('quc').innerText = localStorage.getItem('quc');
+document.getElementById('stc').innerText = localStorage.getItem('stc');
+document.getElementById('c').innerText = localStorage.getItem('c');
+document.getElementById('brzc').innerText = localStorage.getItem('brzc');
+document.getElementById('b').innerText = localStorage.getItem('b');
+document.getElementById('cpc').innerText = localStorage.getItem('cpc');
+document.getElementById('slc').innerText = localStorage.getItem('slc');
+document.getElementById('ptc').innerText = localStorage.getItem('ptc');
+document.getElementById('gc').innerText = localStorage.getItem('gc');
+document.getElementById('t').innerText = localStorage.getItem('t');
+document.getElementById('mc').innerText = localStorage.getItem('mc');
+document.getElementById('dc').innerText = localStorage.getItem('dc');
 progress = localStorage.getItem('progress');
 prestige = localStorage.getItem('prestige');
 reuc = localStorage.getItem('reuc');
 rvuc = localStorage.getItem('rvuc');
 ruc = localStorage.getItem('ruc');
 rsc = localStorage.getItem('rsc');
-d = localStorage.getItem('d');
-vucmake = parseInt(localStorage.getItem('vucmake'));
-ucmake = parseInt(localStorage.getItem('ucmake'));
-scmake = parseInt(localStorage.getItem('scmake'));
-spucmake = parseInt(localStorage.getItem('spucmake'));
-acmake = parseInt(localStorage.getItem('acmake'));
-brcmake = parseInt(localStorage.getItem('brcmake'));
-qucmake = parseInt(localStorage.getItem('qucmake'));
-stcmake = parseInt(localStorage.getItem('stcmake'));
-cmake = parseInt(localStorage.getItem('cmake'));
-brzcmake = parseInt(localStorage.getItem('brzcmake'));
-bmake = parseInt(localStorage.getItem('bmake'));
-cpcmake = parseInt(localStorage.getItem('cpcmake'));
-slcmake = parseInt(localStorage.getItem('slcmake'));
-ptcmake = parseInt(localStorage.getItem('ptcmake'));
-gcmake = parseInt(localStorage.getItem('gcmake'));
-tmake = parseInt(localStorage.getItem('tmake'))">Load</button>
+d = parseInt(localStorage.getItem('d'));
+vucmake = localStorage.getItem('vucmake');
+ucmake = localStorage.getItem('ucmake');
+scmake = localStorage.getItem('scmake');
+spucmake = localStorage.getItem('spucmake');
+acmake = localStorage.getItem('acmake');
+brcmake = localStorage.getItem('brcmake');
+qucmake = localStorage.getItem('qucmake');
+stcmake = localStorage.getItem('stcmake');
+cmake = localStorage.getItem('cmake');
+brzcmake = localStorage.getItem('brzcmake');
+bmake = localStorage.getItem('bmake');
+cpcmake = localStorage.getItem('cpcmake');
+slcmake = localStorage.getItem('slcmake');
+ptcmake = localStorage.getItem('ptcmake');
+gcmake = localStorage.getItem('gcmake');
+tmake = localStorage.getItem('tmake')">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
@@ -141,26 +180,33 @@ document.getElementsByClassName('vucname')[2].style.display = 'block';
 document.getElementById('vuc').style.display = 'inline';
 document.getElementById('vucub').style.display = 'inline';
 }
+aeucmake += 1;
+if(aeucmake >= 300) {
+document.getElementsByClassName('aeucname')[0].style.display = 'inline';
+document.getElementsByClassName('aeucname')[1].style.display = 'inline';
+document.getElementsByClassName('aeucname')[2].style.display = 'block';
+document.getElementById('aeuc').style.display = 'inline';
+}
 ">Buy</button>
 
 <p>Extremely Uncomfortable Chair</p>
 
-<img src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
-<span id=euc>0</span>
-<button onclick="document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress * reuc;
-d += 0.01;
-document.getElementById('dc').innerText = Math.floor(d);
-vucmake += 1;
-if(vucmake >= 3) {
-document.getElementsByClassName('vucname')[0].style.display = 'inline';
-document.getElementsByClassName('vucname')[1].style.display = 'inline';
-document.getElementsByClassName('vucname')[2].style.display = 'block';
-document.getElementById('vuc').style.display = 'inline';
-document.getElementById('vucub').style.display = 'inline';
-}
-">Buy</button>
+<img class=aeucname style="display:none" src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
+<span id=aeuc style="display:none">0</span>
+<button class=aeucname style="display:none" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 300){
+document.getElementById('aeuc').innerText = parseInt(document.getElementById('aeuc').innerText) + progress * rvuc;
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 300;
+}">Trade</button>
 
-<p>Extremely Uncomfortable Autochair</p>
+<p class=aeucname style="display:none">Very Uncomfortable Chair</p>
+
+<script>
+var aeucwork = function() {
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + parseInt(document.getElementById('aeuc').innerText + progress * reuc);
+}
+setInterval(aeucwork, 10000);
+</script>
 
 <script>
 function ub(a, b) {
@@ -204,7 +250,6 @@ document.getElementById('multi').innerText = '(' + prestige + 'x)'
 }">Unlock Buy</button>
 
 <p class=vucname style="display:none">Very Uncomfortable Chair</p>
-<p></p>
 
 <img class=ucname style="display:none" src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
 <span style="display:none" id=uc>0</span>
