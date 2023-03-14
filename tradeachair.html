@@ -47,25 +47,6 @@ ub('scub', 'scbuy')
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
-localStorage.setItem('euc', document.getElementById('euc').innerText);
-localStorage.setItem('vuc', document.getElementById('vuc').innerText);
-localStorage.setItem('uc', document.getElementById('uc').innerText);
-localStorage.setItem('sc', document.getElementById('sc').innerText);
-localStorage.setItem('spuc', document.getElementById('spuc').innerText);
-localStorage.setItem('alc', document.getElementById('alc').innerText);
-localStorage.setItem('brc', document.getElementById('brc').innerText);
-localStorage.setItem('quc', document.getElementById('quc').innerText);
-localStorage.setItem('stc', document.getElementById('stc').innerText);
-localStorage.setItem('c', document.getElementById('c').innerText);
-localStorage.setItem('brzc', document.getElementById('brzc').innerText);
-localStorage.setItem('b', document.getElementById('b').innerText);
-localStorage.setItem('cpc', document.getElementById('cpc').innerText);
-localStorage.setItem('slc', document.getElementById('slc').innerText);
-localStorage.setItem('ptc', document.getElementById('ptc').innerText);
-localStorage.setItem('gc', document.getElementById('gc').innerText);
-localStorage.setItem('t', document.getElementById('t').innerText);
-localStorage.setItem('mc', document.getElementById('mc').innerText);
-localStorage.setItem('dc', document.getElementById('dc').innerText);
 localStorage.setItem('progress', progress);
 localStorage.setItem('prestige', prestige);
 localStorage.setItem('reuc', reuc);
@@ -90,48 +71,29 @@ localStorage.setItem('ptcmake', ptcmake);
 localStorage.setItem('gcmake', gcmake);
 localStorage.setItem('tmake', tmake)">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
-document.getElementById('euc').innerText = localStorage.getItem('euc');
-document.getElementById('vuc').innerText = localStorage.getItem('vuc');
-document.getElementById('uc').innerText = localStorage.getItem('uc');
-document.getElementById('sc').innerText = localStorage.getItem('sc');
-document.getElementById('spuc').innerText = localStorage.getItem('spuc');
-document.getElementById('alc').innerText = localStorage.getItem('alc');
-document.getElementById('brc').innerText = localStorage.getItem('brc');
-document.getElementById('quc').innerText = localStorage.getItem('quc');
-document.getElementById('stc').innerText = localStorage.getItem('stc');
-document.getElementById('c').innerText = localStorage.getItem('c');
-document.getElementById('brzc').innerText = localStorage.getItem('brzc');
-document.getElementById('b').innerText = localStorage.getItem('b');
-document.getElementById('cpc').innerText = localStorage.getItem('cpc');
-document.getElementById('slc').innerText = localStorage.getItem('slc');
-document.getElementById('ptc').innerText = localStorage.getItem('ptc');
-document.getElementById('gc').innerText = localStorage.getItem('gc');
-document.getElementById('t').innerText = localStorage.getItem('t');
-document.getElementById('mc').innerText = localStorage.getItem('mc');
-document.getElementById('dc').innerText = localStorage.getItem('dc');
 progress = localStorage.getItem('progress');
 prestige = localStorage.getItem('prestige');
 reuc = localStorage.getItem('reuc');
 rvuc = localStorage.getItem('rvuc');
 ruc = localStorage.getItem('ruc');
 rsc = localStorage.getItem('rsc');
-d = parseInt(localStorage.getItem('d'));
-vucmake = localStorage.getItem('vucmake');
-ucmake = localStorage.getItem('ucmake');
-scmake = localStorage.getItem('scmake');
-spucmake = localStorage.getItem('spucmake');
-acmake = localStorage.getItem('acmake');
-brcmake = localStorage.getItem('brcmake');
-qucmake = localStorage.getItem('qucmake');
-stcmake = localStorage.getItem('stcmake');
-cmake = localStorage.getItem('cmake');
-brzcmake = localStorage.getItem('brzcmake');
-bmake = localStorage.getItem('bmake');
-cpcmake = localStorage.getItem('cpcmake');
-slcmake = localStorage.getItem('slcmake');
-ptcmake = localStorage.getItem('ptcmake');
-gcmake = localStorage.getItem('gcmake');
-tmake = localStorage.getItem('tmake')">Load</button>
+d = localStorage.getItem('d');
+vucmake = parseInt(localStorage.getItem('vucmake'));
+ucmake = parseInt(localStorage.getItem('ucmake'));
+scmake = parseInt(localStorage.getItem('scmake'));
+spucmake = parseInt(localStorage.getItem('spucmake'));
+acmake = parseInt(localStorage.getItem('acmake'));
+brcmake = parseInt(localStorage.getItem('brcmake'));
+qucmake = parseInt(localStorage.getItem('qucmake'));
+stcmake = parseInt(localStorage.getItem('stcmake'));
+cmake = parseInt(localStorage.getItem('cmake'));
+brzcmake = parseInt(localStorage.getItem('brzcmake'));
+bmake = parseInt(localStorage.getItem('bmake'));
+cpcmake = parseInt(localStorage.getItem('cpcmake'));
+slcmake = parseInt(localStorage.getItem('slcmake'));
+ptcmake = parseInt(localStorage.getItem('ptcmake'));
+gcmake = parseInt(localStorage.getItem('gcmake'));
+tmake = parseInt(localStorage.getItem('tmake'))">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
