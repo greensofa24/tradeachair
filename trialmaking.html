@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+setInterval(position, 1000);
+
+function position() {
+  document.getElementById("t2").style.top = Math.random * screen.height + 'px';
+}
+</script>
+<button onclick="this.style.display = 'none';
+document.getElementById('t1').style.display = 'inline'">Start (1/10)</button>
+<button id=t1 style="display:none" onclick="this.style.display = 'none';
+document.getElementById('n1').style.display = 'inline'">Click</button>
+<button id=n1 style="display:none" onclick="this.style.display = 'none';
+document.getElementById('t2').style.display = 'inline'">Next (2/10)</button>
+<button id=t2 style="display:none" onclick="this.style.display = 'none';
+document.getElementById('t2').style.display = 'inline'">Click</button>
+</body>
+</html>
