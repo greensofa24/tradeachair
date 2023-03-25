@@ -1,3 +1,3 @@
 <button onclick="localStorage.setItem('howmany', Math.round(new Date().getTime() / 10000));">Save</button>
-<button onclick="getElementById('p') = Math.round(new Date().getTime() / 10000) - parseInt(localStorage.getItem('howmany'))">Load</button>
+<button onclick="getElementById('p').innerText = Math.round(new Date().getTime() / 10000) - parseInt(localStorage.getItem('howmany'))">Load</button>
 <p id=p>0x 10s</p>
