@@ -34,6 +34,7 @@ var slcmake = 0;
 var ptcmake = 0;
 var gcmake = 0;
 var tmake = 0;
+var aeuc = 0;
 </script>
 
 <button onclick="
@@ -77,23 +78,23 @@ reuc = localStorage.getItem('reuc');
 rvuc = localStorage.getItem('rvuc');
 ruc = localStorage.getItem('ruc');
 rsc = localStorage.getItem('rsc');
-d = localStorage.getItem('d');
-vucmake = parseInt(localStorage.getItem('vucmake'));
-ucmake = parseInt(localStorage.getItem('ucmake'));
-scmake = parseInt(localStorage.getItem('scmake'));
-spucmake = parseInt(localStorage.getItem('spucmake'));
-acmake = parseInt(localStorage.getItem('acmake'));
-brcmake = parseInt(localStorage.getItem('brcmake'));
-qucmake = parseInt(localStorage.getItem('qucmake'));
-stcmake = parseInt(localStorage.getItem('stcmake'));
-cmake = parseInt(localStorage.getItem('cmake'));
-brzcmake = parseInt(localStorage.getItem('brzcmake'));
-bmake = parseInt(localStorage.getItem('bmake'));
-cpcmake = parseInt(localStorage.getItem('cpcmake'));
-slcmake = parseInt(localStorage.getItem('slcmake'));
-ptcmake = parseInt(localStorage.getItem('ptcmake'));
-gcmake = parseInt(localStorage.getItem('gcmake'));
-tmake = parseInt(localStorage.getItem('tmake'))">Load</button>
+d = parseInt(localStorage.getItem('d'));
+vucmake = localStorage.getItem('vucmake');
+ucmake = localStorage.getItem('ucmake');
+scmake = localStorage.getItem('scmake');
+spucmake = localStorage.getItem('spucmake');
+acmake = localStorage.getItem('acmake');
+brcmake = localStorage.getItem('brcmake');
+qucmake = localStorage.getItem('qucmake');
+stcmake = localStorage.getItem('stcmake');
+cmake = localStorage.getItem('cmake');
+brzcmake = localStorage.getItem('brzcmake');
+bmake = localStorage.getItem('bmake');
+cpcmake = localStorage.getItem('cpcmake');
+slcmake = localStorage.getItem('slcmake');
+ptcmake = localStorage.getItem('ptcmake');
+gcmake = localStorage.getItem('gcmake');
+tmake = localStorage.getItem('tmake')">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
@@ -141,9 +142,33 @@ document.getElementsByClassName('vucname')[2].style.display = 'block';
 document.getElementById('vuc').style.display = 'inline';
 document.getElementById('vucub').style.display = 'inline';
 }
+aeucmake += 1;
+if(aeucmake >= 300) {
+document.getElementsByClassName('aeucname')[0].style.display = 'inline';
+document.getElementsByClassName('aeucname')[1].style.display = 'inline';
+document.getElementsByClassName('aeucname')[2].style.display = 'block';
+document.getElementById('aeuc').style.display = 'inline';
+}
 ">Buy</button>
 
 <p>Extremely Uncomfortable Chair</p>
+
+<img class=aeucname style="display:none" src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
+<span id=aeuc style="display:none">0</span>
+<button class=aeucname style="display:none" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 300){
+document.getElementById('aeuc').innerText = parseInt(document.getElementById('aeuc').innerText) + progress * rvuc;
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 300;
+}">Trade</button>
+
+<p class=aeucname style="display:none">Very Uncomfortable Chair</p>
+
+<script>
+var aeucwork = function() {
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + parseInt(document.getElementById('aeuc').innerText + progress * reuc);
+}
+setInterval(aeucwork, 10000);
+</script>
 
 <script>
 function ub(a, b) {
@@ -184,10 +209,9 @@ if(prestige < 2){
 prestige = 2;
 }
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
-">Unlock Buy</button>
+}">Unlock Buy</button>
 
 <p class=vucname style="display:none">Very Uncomfortable Chair</p>
-<p></p>
 
 <img class=ucname style="display:none" src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
 <span style="display:none" id=uc>0</span>
