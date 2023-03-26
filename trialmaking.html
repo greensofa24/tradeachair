@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+#t2{
+    display: block;
+    position: absolute;
+}
+</style>
+</head>
 <body>
 <script>
+var n = 1;
 setInterval(position, 1000);
 
 function position() {
@@ -13,8 +22,28 @@ document.getElementById('t1').style.display = 'inline'">Start (1/10)</button>
 <button id=t1 style="display:none" onclick="this.style.display = 'none';
 document.getElementById('n1').style.display = 'inline'">Click</button>
 <button id=n1 style="display:none" onclick="this.style.display = 'none';
-document.getElementById('t2').style.display = 'inline'">Next (2/10)</button>
+if (n == 1) {document.getElementById('t2').style.display = 'inline'}
+if (n == 2) {document.getElementById('u1').style.display = 'inline';
+document.getElementById('t3').style.display = 'block';
+document.getElementById('t3').style.top = window.innerHeight + 'px';
+document.body.style.height = window.innerHeight + 21 + 'px'}">Next (2/10)</button>
 <button id=t2 style="display:none" onclick="this.style.display = 'none';
-document.getElementById('t2').style.display = 'inline'">Click</button>
+document.getElementById('n1').style.display = 'inline';
+document.getElementById('n1').innerText = 'Next (3/10)';
+n = 2">Click</button>
+<button id=u1 style="display:none">Click</button>
+<button id=t3 style="display:none; position:absolute;" onclick="">Click</button>
+
+<script>
+var b = document.getElementById("t2");
+function change()
+{
+    var i = Math.floor(Math.random()*window.innerWidth);
+    var j = Math.floor(Math.random()*window.innerHeight);
+    b.style.left = i+"px";
+    b.style.top = j+"px";
+}
+setInterval(change, 1000);
+</script>
 </body>
 </html>
