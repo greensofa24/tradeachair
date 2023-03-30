@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +19,7 @@ var reuc = 1;
 var svuc = 1;
 var wuc = 1;
 var bsc = 1;
+var d = 0;
 </script>
 
 <button onclick="
@@ -33,10 +33,12 @@ ub('ucub', 'ucbuy')
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
 localStorage.setItem('progress', progress);
-localStorage.setItem('prestige', prestige);">Save</button>
+localStorage.setItem('prestige', prestige);
+localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
 progress = localStorage.getItem('progress');
-prestige = localStorage.getItem('prestige');">Load</button>
+prestige = localStorage.getItem('prestige');
+d = parseInt(localStorage.getItem('d'));">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
@@ -72,9 +74,11 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 <p>Defective Chair</p>
 
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
-<span id=euc>1</span>
+<span id=euc>0</span>
 <button onclick="
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress * reuc;">Buy</button>
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress * reuc;
+d += 0.01;
+document.getElementById('dc').innerText = Math.floor(d);">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
