@@ -22,6 +22,13 @@ var bsc = 1;
 var d = 0;
 </script>
 
+<button onclick="document.getElementById('a').style.display = 'inline'">Acheivements</button>
+
+<h1 id=a style="position:absolute; top:0px; display:none" onclick="document.body.style.display = 'block'">X</h1>
+<script>
+document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
+</script>
+
 <button onclick="
 document.getElementById('euc').innerText = 0;
 document.getElementById('vuc').innerText = 0;
