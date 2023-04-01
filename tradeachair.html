@@ -24,7 +24,8 @@ var d = 0;
 
 <button onclick="document.getElementById('a').style.display = 'inline'">Acheivements</button>
 
-<h1 id=a style="position:absolute; top:0px; display:none" onclick="document.body.style.display = 'block'">X</h1>
+<h1 id=a style="position:absolute; top:0px; display:none" onclick="document.body.style.display = 'block';
+this.style.display = 'none'">X</h1>
 <script>
 document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
 </script>
@@ -80,11 +81,25 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 
 <p>Defective Chair</p>
 
+<script>
+function tradewith(a, b, c, d) {
+if(parseInt(document.getElementById(a).innerText) >= c){
+document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + progress * d;
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c
+}
+}
+function trade(a, b, c) {
+if(parseInt(document.getElementById(a).innerText) >= c){
+document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + progress;
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c
+}
+}
+</script>
+
 <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg" width="70">
 <span id=euc>0</span>
 <button onclick="
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + progress * reuc;
-d += 0.01;
+tradewith('euc', 'euc', 0, reuc);
 document.getElementById('dc').innerText = Math.floor(d);">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
 
@@ -115,10 +130,7 @@ document.getElementById(b).style.display = 'none';
 <img src="https://www.eosworldwide.com/wp-content/uploads/2020/01/Rocks_for_all_simplified.jpg" width="70">
 <span id=vuc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('euc').innerText) >= 3){
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * svuc;
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 3
-}">Trade</button>
+tradewith('euc', 'vuc', 3, svuc);">Trade</button>
 <button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * svuc" style="display:none">Buy</button>
 <button id="vucub" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 200){
@@ -135,10 +147,7 @@ document.getElementById('multi').innerText = '(' + prestige + 'x)'
 <img src="https://t3.ftcdn.net/jpg/01/90/02/66/360_F_190026621_xky8X51XqkYvPpR11LzFN2sblCstq3ze.jpg" width="70">
 <span id=uc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('vuc').innerText) >= 5){
-document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress * wuc;
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 5
-}">Trade</button>
+tradewith('vuc', 'uc', 5, wuc);">Trade</button>
 <button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress * wuc" style="display:none">Buy</button>
 <button id="ucub" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
@@ -154,127 +163,85 @@ document.getElementById('multi').innerText = '(' + prestige + 'x)'
 <img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
 <span id=sc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('uc').innerText) >= 3){
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) + progress * bsc;
-document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 3
-}">Trade</button>
+tradewith('uc', 'sc', 3, bsc);">Trade</button>
 <p>Stone Chair</p>
 
 <img src="https://www.craftparts.com/wp-content/uploads/2019/07/SQM300-3.jpg" width="70">
 <span id=spuc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('uc').innerText) >= 5){
-document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) + progress;
-document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5
-}">Trade</button>
+trade('uc', 'spuc', 5);">Trade</button>
 <p>Splintery Uncomfortable Chair</p>
 
 <img src="https://www.apexdesign.com/media/catalog/product/cache/24/image/9df78eab33525d08d6e5fb8d27136e95/a/l/aluminium-cross-back-outdoor-chair-1.jpg" width="70">
 <span id=ac>0</span>
 <button onclick="
-if(parseInt(document.getElementById('sc').innerText) >= 3){
-document.getElementById('ac').innerText = parseInt(document.getElementById('ac').innerText) + progress;
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 3
-}">Trade</button>
+trade('sc', 'ac', 3);">Trade</button>
 <p>Aluminium Chair</p>
 
 <img src="https://static.havenly.com/product/production/php_59a6e65249d74.jpg" width="70">
 <span id=brc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('sc').innerText) >= 4){
-document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) + progress;
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 4
-}">Trade</button>
+trade('sc', 'brc', 4);">Trade</button>
 <p>Brass Chair</p>
 
 <img src="https://st.hzcdn.com/fimgs/28e1ac030f625e4e_4080-w300-h300-b1-p0--.jpg" width="50" style="position:relative;left: 10px">
 <span id=quc style="position:relative;left: 20px">0</span>
 <button style="position:relative;left: 20px" onclick="
-if(parseInt(document.getElementById('spuc').innerText) >= 3){
-document.getElementById('quc').innerText = parseInt(document.getElementById('quc').innerText) + progress;
-document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 3
-}">Trade</button>
+trade('spuc', 'quc', 3);">Trade</button>
 <p>Quite Uncomfortable Chair</p>
 
 <img src="https://media.nisbets.com/asset/core/prodimage/large_new/gl329_5.jpg" width="70">
 <span id=stc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('brc').innerText) >= 2){
-document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) + progress;
-document.getElementById('brc').innerText = parseInt(document.getElementById('brc').innerText) - 2
-}">Trade</button>
+trade('brc', 'stc', 2);">Trade</button>
 <p>Steel Chair</p>
 
 <img src="https://www.shack.com.au/wp-content/uploads/CHATEAU-DINING-CHAIR-SIDE.jpg" width="70">
 <span id=c>0</span>
 <button onclick="
-if(parseInt(document.getElementById('spuc').innerText) >= 5){
-document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) + progress;
-document.getElementById('spuc').innerText = parseInt(document.getElementById('spuc').innerText) - 5
-}">Trade</button>
+trade('spuc', 'c', 5);">Trade</button>
 <p>Chair</p>
 
 <img src="https://cdn.myportfolio.com/7e2b3e9ad6427ce7868402c4a32f5580/90164cffbd848e968cb733c3_rw_1200.jpg?h=32fff8339d92ca2bac10dd7474222adc" width="70">
 <span id=brzc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('stc').innerText) >= 3){
-document.getElementById('brzc').innerText = parseInt(document.getElementById('brzc').innerText) + progress;
-document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 3
-}">Trade</button>
+trade('stc', 'brzc', 3);">Trade</button>
 <p>Bronze Chair</p>
 
 <img src="https://www.mitre10.com.au/media/catalog/product/6/1/6153613-0_3.jpg?optimize=high&fit=bounds&height=840&width=840&canvas=840:840" width="70">
 <span id=b>0</span>
 <button onclick="
-if(parseInt(document.getElementById('c').innerText) >= 3){
-document.getElementById('b').innerText = parseInt(document.getElementById('b').innerText) + progress;
-document.getElementById('c').innerText = parseInt(document.getElementById('c').innerText) - 3
-}">Trade</button>
+trade('c', 'b', 3);">Trade</button>
 <p>Bench</p>
 
 <img src="https://haveaseat.com.au/wp-content/uploads/2021/12/MG_0270-2.jpg" width="70">
 <span id=cpc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('stc').innerText) >= 5){
-document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) + progress;
-document.getElementById('stc').innerText = parseInt(document.getElementById('stc').innerText) - 5
-}">Trade</button>
+trade('stc', 'cpc', 5);">Trade</button>
 <p>Copper Chair</p>
 
 <img src="http://cdn.shopify.com/s/files/1/0036/9881/9187/products/crystal_tiff_no_cush_1400x.jpg?v=1528849709" width="70">
 <span id=slc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('cpc').innerText) >= 75){
-document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) + progress;
-document.getElementById('cpc').innerText = parseInt(document.getElementById('cpc').innerText) - 75
-}">Trade</button>
+trade('cpc', 'slc', 75);">Trade</button>
 <p>Silver Chair</p>
 
 <img src="https://www.ergohuman.com.au/img/ERG-LPGM-HRL-1.jpg" width="70">
 <span id=ptc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('slc').innerText) >= 40){
-document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) + progress;
-document.getElementById('slc').innerText = parseInt(document.getElementById('slc').innerText) - 40
-}">Trade</button>
+trade('slc', 'ptc', 40);">Trade</button>
 <p>Platinum Chair</p>
 
 <img src="https://cqpartyhire.com.au/wp-content/uploads/2018/05/Gold-Tiffany-chair-1.jpg" width="70">
 <span id=gc>0</span>
 <button onclick="
-if(parseInt(document.getElementById('ptc').innerText) >= 2){
-document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) + progress;
-document.getElementById('ptc').innerText = parseInt(document.getElementById('ptc').innerText) - 2
-}">Trade</button>
+trade('ptc', 'gc', 2);">Trade</button>
 <p>Gold Chair</p>
 
 <img src="https://moreproduction.co.uk/wp-content/uploads/King_Throne.jpg" width="70">
 <span id=t>0</span>
 <button onclick="
-if(parseInt(document.getElementById('gc').innerText) >= 5){
-document.getElementById('t').innerText = parseInt(document.getElementById('t').innerText) + progress;
-document.getElementById('gc').innerText = parseInt(document.getElementById('gc').innerText) - 5
-}">Trade</button>
+trade('gc', 't', 5);">Trade</button>
 <p>Throne</p>
 
 <img src="https://greensofa24.github.io/tradeachair/magicchair.png" width="70">
