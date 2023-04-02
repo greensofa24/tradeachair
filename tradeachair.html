@@ -20,12 +20,75 @@ var svuc = 1;
 var wuc = 1;
 var bsc = 1;
 var d = 0;
+var uv = 0;
+var uu = 0;
 </script>
 
-<button onclick="document.getElementById('a').style.display = 'inline'">Acheivements</button>
+<button onclick="document.getElementById('a').style.display = 'inline'
+document.getElementsByTagName('h1')[0].style.display = 'none';
+document.getElementsByTagName('h3')[0].style.display = 'none';
+document.getElementsByTagName('a')[0].style.display = 'none';
+var p = document.getElementsByTagName('p');
+var s = document.getElementsByTagName('span');
+var b = document.getElementsByTagName('button');
+var img = document.getElementsByTagName('img');
+for (let i = 0; i < p.length; i++) {
+p[i].style.display = 'none';
+}
+for (let i = 0; i < s.length; i++) {
+s[i].style.display = 'none';
+}
+for (let i = 0; i < b.length; i++) {
+b[i].style.display = 'none';
+}
+for (let i = 0; i < img.length; i++) {
+img[i].style.display = 'none';
+}
+">Acheivements</button>
 
 <h1 id=a style="position:absolute; top:0px; display:none" onclick="document.body.style.display = 'block';
-this.style.display = 'none'">X</h1>
+this.style.display = 'none';
+document.getElementsByTagName('h1')[0].style.display = 'block';
+document.getElementsByTagName('h3')[0].style.display = 'block';
+document.getElementsByTagName('a')[0].style.display = 'inline';
+var p = document.getElementsByTagName('p');
+var s = document.getElementsByTagName('span');
+var b = document.getElementsByTagName('button');
+var img = document.getElementsByTagName('img');
+for (let i = 0; i < p.length; i++) {
+p[i].style.display = 'block';
+}
+for (let i = 0; i < s.length; i++) {
+s[i].style.display = 'inline';
+}
+for (let i = 0; i < b.length; i++) {
+if (uv == 0 && uu == 0){
+if (i != 11 && i != 14) {
+b[i].style.display = 'inline';
+}
+}
+/*for (let i = 0; i < b.length; i++) {
+if (uv == 0 && uu == 1){
+if (i != 11) {
+b[i].style.display = 'inline';
+}
+}
+for (let i = 0; i < b.length; i++) {
+if (uv == 1 && uu == 0){
+if (i != 14) {
+b[i].style.display = 'inline';
+}
+}
+for (let i = 0; i < b.length; i++) {
+if (uv == 1 && uu == 1) {
+b[i].style.display = 'inline';
+}
+}*/
+for (let i = 0; i < img.length; i++) {
+img[i].style.display = 'inline';
+}
+}">X</h1>
+
 <script>
 document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
 </script>
@@ -140,6 +203,7 @@ if(prestige < 2){
 prestige = 2;
 }
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
+var uv = 1;
 }">Unlock Buy</button>
 
 <p>Very Uncomfortable Chair</p>
@@ -157,6 +221,7 @@ if(prestige < 3){
 prestige = 3;
 }
 document.getElementById('multi').innerText = '(' + prestige + 'x)'
+var uu = 1;
 }">Unlock Buy</button>
 <p>Uncomfortable Chair</p>
 
