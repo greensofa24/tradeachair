@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 <body>
 <script>
 var n = 1;
+var h = 1;
 setInterval(position, 1000);
 
 function position() {
@@ -27,7 +29,8 @@ if (n == 2) {document.getElementById('u1').style.display = 'inline';
 document.getElementById('t3').style.display = 'block';
 document.getElementById('t3').style.top = window.innerHeight + 'px';
 document.body.style.height = window.innerHeight + 21 + 'px'}
-if (n == 3) {document.getElementById('t4').style.display = 'inline'}">Next (2/10)</button>
+if (n == 3) {document.getElementById('t4').style.display = 'inline';
+document.getElementById('hb1').style.display = 'inline'}">Next (2/10)</button>
 <button id=t2 style="display:none" onclick="this.style.display = 'none';
 document.getElementById('n1').style.display = 'inline';
 document.getElementById('n1').innerText = 'Next (3/10)';
@@ -39,6 +42,15 @@ document.getElementById('n1').style.display = 'inline';
 document.getElementById('n1').innerText = 'Next (4/10)';
 n = 3;
 document.body.style.height = window.innerHeight - 21 + 'px'">Click</button>
+<button id=t4 style="display:none" onclick="if(h == 1) {
+document.getElementById('hb1').innerText = document.getElementById('hb1').innerText.replace('—', '–');
+h = 2;
+} else {
+document.getElementById('hb1').innerText = document.getElementById('hb1').innerText.replace('–', '');
+h = 1;
+}">Click<br>/ &nbsp; || &nbsp; \<br>||</button>
+<br>
+<p id=hb1 style="display:none; color:lightgreen;">——————————</p>
 
 <script>
 var b = document.getElementById("t2");
@@ -49,7 +61,7 @@ function change()
     b.style.left = i+"px";
     b.style.top = j+"px";
 }
-setInterval(change, 600);
+setInterval(change, 575);
 </script>
 </body>
 </html>
