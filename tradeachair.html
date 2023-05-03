@@ -178,7 +178,9 @@ document.getElementById('euc').innerText = parseInt(document.getElementById('euc
 
 <script>
 var aeucwork = function() {
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) + parseInt(document.getElementById('aeuc').innerText) + progress * reuc - 1;
+for(let i = 0; i < parseInt(document.getElementById('aeuc').innerText); i++;) {
+document.getElementsByTagName('button')[8].click()
+}
 }
 setInterval(aeucwork, 10000);
 </script>
