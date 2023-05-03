@@ -19,15 +19,27 @@ var j = Math.floor(Math.random()*window.innerHeight);
 document.getElementById("t2").style.left = i+"px";
 document.getElementById("t2").style.top = j+"px";
 }
-setInterval(change, 6000)
+setInterval(change, 600)
 
 function add() {
 document.getElementById("hb1").innerText += "—";
-if(document.getElementById('hb1').textContent == '—————————') {
+if(document.getElementById('hb1').textContent == '————————————————————————') {
 document.getElementById('hb1').style.color = 'lightgreen';
 }
-if(document.getElementById('hb1').textContent == '—————') {
+if(document.getElementById('hb1').textContent == '————————————————————') {
+document.getElementById('hb1').style.color = 'yellowgreen';
+}
+if(document.getElementById('hb1').textContent == '————————————————') {
 document.getElementById('hb1').style.color = 'yellow';
+}
+if(document.getElementById('hb1').textContent == '————————————') {
+document.getElementById('hb1').style.color = 'orange';
+}
+if(document.getElementById('hb1').textContent == '————————') {
+document.getElementById('hb1').style.color = 'darkorange';
+}
+if(document.getElementById('hb1').textContent == '————') {
+document.getElementById('hb1').style.color = 'red';
 }
 }
 </script>
@@ -61,8 +73,17 @@ document.getElementById('hb1').style.display = 'none';
 document.getElementById('t4').style.display = 'none';
 n = 4;
 }
-if(document.getElementById('hb1').innerText == '————————') {
+if(document.getElementById('hb1').innerText == '————————————————————') {
+document.getElementById('hb1').style.color = 'yellowgreen';
+}
+if(document.getElementById('hb1').innerText == '————————————————') {
 document.getElementById('hb1').style.color = 'yellow';
+}
+if(document.getElementById('hb1').innerText == '————————————') {
+document.getElementById('hb1').style.color = 'orange';
+}
+if(document.getElementById('hb1').innerText == '————————') {
+document.getElementById('hb1').style.color = 'darkorange';
 }
 if(document.getElementById('hb1').innerText == '————') {
 document.getElementById('hb1').style.color = 'red';
@@ -75,7 +96,7 @@ document.getElementById('hb1').innerText = document.getElementById('hb1').innerT
 h = 1;
 }">Click<br>/ &nbsp; || &nbsp; \<br>||</button>
 <br>
-<p id=hb1 style="display:none; color:lightgreen; user-select: none">————————————</p>
+<p id=hb1 style="display:none; color:lightgreen; user-select: none">————————————————————————</p>
 
 </body>
 </html>
