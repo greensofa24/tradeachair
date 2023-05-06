@@ -22,7 +22,7 @@ var j = Math.floor(Math.random()*window.innerHeight);
 document.getElementById("t2").style.left = i+"px";
 document.getElementById("t2").style.top = j+"px";
 }
-setInterval(change, 6000)
+setInterval(change, 600)
 
 function add() {
 document.getElementById("hb1").innerText += "—";
@@ -49,8 +49,8 @@ document.getElementById('hb1').style.color = 'red';
 <button style="user-select: none" onclick="this.style.display = 'none';
 document.getElementById('t1').style.display = 'inline'">Start (1/5)</button>
 <button id=t1 style="display:none; user-select: none" onclick="this.style.display = 'none';
-document.getElementById('n1').style.display = 'inline'">Click</button>
-<button id=n1 style="display:none; user-select: none" onclick="this.style.display = 'none';
+document.getElementById('n').style.display = 'inline'">Click</button>
+<button id=n style="display:none; user-select: none" onclick="this.style.display = 'none';
 if (n == 1) {document.getElementById('t2').style.display = 'inline'}
 if (n == 2) {document.getElementById('u1').style.display = 'inline';
 document.getElementById('t3').style.display = 'block';
@@ -61,25 +61,30 @@ document.getElementById('hb1').style.display = 'inline';
 setInterval(add, 500);}
 if (n == 4) {
 document.getElementById('t5').style.display = 'inline'
-for (let all = 0; all < document)
+for (let all = 0; all < document.getElementsByClassName('u2').length; all++) {
+document.getElementsByClassName('u2')[all].style.display = 'inline';
+}
+}
+if (n == 5) {
+document.body.innerHTML = 'yay!'
 }">Next (2/5)</button>
 <button id=t2 style="display:none; user-select: none" onclick="this.style.display = 'none';
-document.getElementById('n1').style.display = 'inline';
-document.getElementById('n1').innerText = 'Next (3/5)';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Next (3/5)';
 n = 2">Click</button>
 <button id=u1 style="display:none; user-select: none">Click</button>
 <button id=t3 style="display:none; position:absolute; user-select: none" onclick="this.style.display = 'none';
 document.getElementById('u1').style.display = 'none';
-document.getElementById('n1').style.display = 'inline';
-document.getElementById('n1').innerText = 'Next (4/5)';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Next (4/5)';
 n = 3;
 document.body.style.height = window.innerHeight - 21 + 'px'">Click</button>
 <button id=t4 style="display:none; user-select: none" onclick="
 if(document.getElementById('hb1').innerText == '–') {
 document.getElementById('hb1').style.display = 'none';
-document.getElementById('t4').style.display = 'none';
-document.getElementById('n1').style.display = 'inline';
-document.getElementById('n1').innerText = 'Last One (5/5)';
+this.style.display = 'none';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Last One (5/5)';
 n = 4;
 }
 if(document.getElementById('hb1').innerText == '————————————————————') {
@@ -105,7 +110,7 @@ document.getElementById('hb1').innerText = document.getElementById('hb1').innerT
 h = 1;
 }">Click<br>/ &nbsp; || &nbsp; \<br>||</button>
 <br>
-<p id=hb1 style="display:none; color:lightgreen; user-select: none">————————————————————————</p>
+<p id=hb1 style="display:none; color:lightgreen; user-select: none">—</p>
 <button class="u2">Don't</button>
 <button class="u2">Don't</button>
 <button class="u2">Don't</button>
@@ -4593,7 +4598,13 @@ h = 1;
 <button class="u2">Don't</button>
 <button class="u2">Don't</button>
 <button class="u2">Don't</button>
-<button id="t5" style="display:none;">Click</button>
+<button id="t5" style="display:none;" onclick="document.getElementById('n').style.display = 'inline'; document.getElementById('n').innerText = 'Finish';
+n = 5;
+this.style.display = 'none';
+for (let all = 0; all < document.getElementsByClassName('u2').length; all++) {
+document.getElementsByClassName('u2')[all].style.display = 'none';
+}"
+>Click</button>
 <button class="u2">Don't</button>
 <button class="u2">Don't</button>
 <button class="u2">Don't</button>
