@@ -325,16 +325,15 @@ trade('t', 'tb', 5);">Trade</button>
 
 <script>
 function cheat() {
-  let code = prompt("Enter your cheat code", "");
-  if (code == "DaleMagicChair5" && localStorage.getItem('b') == 'a') {
-    document.getElementById("mc").innerText + 5;
-    localStorage.setItem('b', 'b');
-  }
-  if (code == "200MoreEucForMe" && localStorage.getItem('a') == 'a') {
-    document.getElementById("euc").innerText =
-    parseInt(document.getElementById("euc").innerText) + 200;
-    localStorage.setItem('a', 'b');
-  }
+let code = prompt("Enter your cheat code", "");
+if (code == "DaleMagicChair100" && localStorage.getItem('b') == 'a') {
+document.getElementById("mc").innerText = parseInt(document.getElementById("mc").innerText) + 100;
+localStorage.setItem('b', 'b');
+}
+if (code == "200MoreEucForMe" && localStorage.getItem('a') == 'a') {
+document.getElementById("euc").innerText = parseInt(document.getElementById("euc").innerText) + 200;
+localStorage.setItem('a', 'b');
+}
 }
 </script>
 
