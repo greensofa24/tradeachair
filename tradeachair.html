@@ -24,7 +24,9 @@ var uv = 0;
 var uu = 0;
 </script>
 
-<button onclick="document.getElementById('a').style.display = 'inline'
+<button onclick="
+localStorage.setItem('body', document.body.innerHTML);
+document.getElementById('a').style.display = 'inline';
 document.getElementsByTagName('h1')[0].style.display = 'none';
 document.getElementsByTagName('h3')[0].style.display = 'none';
 document.getElementsByTagName('a')[0].style.display = 'none';
@@ -46,48 +48,10 @@ img[i].style.display = 'none';
 }
 ">Acheivements</button>
 
-<h1 id=a style="position:absolute; top:0px; display:none" onclick="document.body.style.display = 'block';
+<h1 id=a style="position:absolute; top:0px; display:none" onclick="
+document.body.innerHTML = localStorage.getItem('body');
 this.style.display = 'none';
-document.getElementsByTagName('h1')[0].style.display = 'block';
-document.getElementsByTagName('h3')[0].style.display = 'block';
-document.getElementsByTagName('a')[0].style.display = 'inline';
-var p = document.getElementsByTagName('p');
-var s = document.getElementsByTagName('span');
-var b = document.getElementsByTagName('button');
-var img = document.getElementsByTagName('img');
-for (let i = 0; i < p.length; i++) {
-p[i].style.display = 'block';
-}
-for (let i = 0; i < s.length; i++) {
-s[i].style.display = 'inline';
-}
-for (let i = 0; i < b.length; i++) {
-if (uv == 0 && uu == 0){
-if (i != 11 && i != 14) {
-b[i].style.display = 'inline';
-}
-}
-/*for (let i = 0; i < b.length; i++) {
-if (uv == 0 && uu == 1){
-if (i != 11) {
-b[i].style.display = 'inline';
-}
-}
-for (let i = 0; i < b.length; i++) {
-if (uv == 1 && uu == 0){
-if (i != 14) {
-b[i].style.display = 'inline';
-}
-}
-for (let i = 0; i < b.length; i++) {
-if (uv == 1 && uu == 1) {
-b[i].style.display = 'inline';
-}
-}*/
-for (let i = 0; i < img.length; i++) {
-img[i].style.display = 'inline';
-}
-}">X</h1>
+">X</h1>
 
 <script>
 document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
@@ -320,6 +284,147 @@ trade('t', 'tb', 5);">Trade</button>
 <img src="https://greensofa24.github.io/tradeachair/magicchair.png" width="70">
 <span id=mc>0</span>
 <p>Magic Chair</p>
+
+<script>
+var n = 0;
+var h = 1;
+var dont = document.createElement("button");
+dont.innerText = "Don't";
+dont.classList.add("u2");
+var click = document.createElement("button");
+click.innerText = "Click";
+click.addEventListener("click", function() {
+  document.getElementById("n").style.display = "inline"; document.getElementById("n").innerText = "Finish"; n = 5; this.style.display = "none"; for (let all = 0; all < document.getElementsByClassName("u2").length; all++) { document.getElementsByClassName("u2")[all].style.display = "none"; }
+})
+function change() {
+var i = Math.floor(Math.random()*window.innerWidth);
+var j = Math.floor(Math.random()*window.innerHeight);
+document.getElementById("t2").style.left = i+"px";
+document.getElementById("t2").style.top = j+"px";
+}
+setInterval(change, 600)
+function create() {
+for(let c = 1; c < 7452; c++) {
+document.body.appendChild(dont.cloneNode(true));
+}
+document.body.appendChild(click);
+for(let c = 1; c < 4487; c++) {
+document.body.appendChild(dont.cloneNode(true));
+}
+}
+function add() {
+document.getElementById("hb1").innerText += "—";
+if(document.getElementById('hb1').textContent == '————————————————————————') {
+document.getElementById('hb1').style.color = 'lightgreen';
+}
+if(document.getElementById('hb1').textContent == '————————————————————') {
+document.getElementById('hb1').style.color = 'yellowgreen';
+}
+if(document.getElementById('hb1').textContent == '————————————————') {
+document.getElementById('hb1').style.color = 'yellow';
+}
+if(document.getElementById('hb1').textContent == '————————————') {
+document.getElementById('hb1').style.color = 'orange';
+}
+if(document.getElementById('hb1').textContent == '————————') {
+document.getElementById('hb1').style.color = 'darkorange';
+}
+if(document.getElementById('hb1').textContent == '————') {
+document.getElementById('hb1').style.color = 'red';
+}
+}
+</script>
+<button id=t1 style="display:none; user-select: none" onclick="this.style.display = 'none';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Next (2/5)';
+n = 1;">Click</button>
+<button id=n style="display:none; user-select: none" onclick="this.style.display = 'none';
+if (n == 0) {document.getElementById('t1').style.display = 'inline'}
+if (n == 1) {document.getElementById('t2').style.display = 'inline'}
+if (n == 2) {document.getElementById('u1').style.display = 'inline';
+document.getElementById('t3').style.display = 'block';
+document.getElementById('t3').style.top = window.innerHeight + 'px';
+document.body.style.height = window.innerHeight + 21 + 'px'}
+if (n == 3) {document.getElementById('t4').style.display = 'inline';
+document.getElementById('hb1').style.display = 'inline';
+setInterval(add, 500);}
+if (n == 4) {
+create()
+}
+if (n == 5) {
+document.body.innerHTML = localStorage.getItem('body');
+}">Start (1/5)</button>
+<button id=t2 style="position: absolute; display:none; user-select: none" onclick="this.style.display = 'none';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Next (3/5)';
+n = 2">Click</button>
+<button id=u1 style="display:none; user-select: none">Click</button>
+<button id=t3 style="display:none; position:absolute; user-select: none" onclick="this.style.display = 'none';
+document.getElementById('u1').style.display = 'none';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Next (4/5)';
+n = 3;
+document.body.style.height = window.innerHeight - 21 + 'px'">Click</button>
+<button id=t4 style="display:none; user-select: none" onclick="
+if(document.getElementById('hb1').innerText == '–') {
+document.getElementById('hb1').style.display = 'none';
+this.style.display = 'none';
+document.getElementById('n').style.display = 'inline';
+document.getElementById('n').innerText = 'Last One (5/5)';
+n = 4;
+}
+if(document.getElementById('hb1').innerText == '————————————————————') {
+document.getElementById('hb1').style.color = 'yellowgreen';
+}
+if(document.getElementById('hb1').innerText == '————————————————') {
+document.getElementById('hb1').style.color = 'yellow';
+}
+if(document.getElementById('hb1').innerText == '————————————') {
+document.getElementById('hb1').style.color = 'orange';
+}
+if(document.getElementById('hb1').innerText == '————————') {
+document.getElementById('hb1').style.color = 'darkorange';
+}
+if(document.getElementById('hb1').innerText == '————') {
+document.getElementById('hb1').style.color = 'red';
+}
+if(h == 1) {
+document.getElementById('hb1').innerText = document.getElementById('hb1').innerText.replace('—', '–');
+h = 2;
+} else {
+document.getElementById('hb1').innerText = document.getElementById('hb1').innerText.replace('–', '');
+h = 1;
+}">Click<br>/ &nbsp; || &nbsp; \<br>||</button>
+<br>
+<p id=hb1 style="display:none; color:lightgreen; user-select: none">————————————————————————</p>
+
+<button onclick="
+localStorage.setItem('body', document.body.innerHTML);
+document.getElementsByTagName('h1')[0].style.display = 'none';
+document.getElementsByTagName('h3')[0].style.display = 'none';
+document.getElementsByTagName('a')[0].style.display = 'none';
+var p = document.getElementsByTagName('p');
+var br = document.getElementsByTagName('br');
+var s = document.getElementsByTagName('span');
+var b = document.getElementsByTagName('button');
+var img = document.getElementsByTagName('img');
+for (let i = 0; i < p.length; i++) {
+p[i].style.display = 'none';
+}
+for (let i = 0; i < 8; i++) {
+br[i].style.display = 'none';
+}
+for (let i = 0; i < s.length; i++) {
+s[i].style.display = 'none';
+}
+for (let i = 0; i < b.length; i++) {
+b[i].style.display = 'none';
+}
+for (let i = 0; i < img.length; i++) {
+img[i].style.display = 'none';
+}
+document.getElementById('n').style.display = 'inline';
+">Start Trials</button>
 
 <button onclick="cheat()">Cheat Code</button>
 
