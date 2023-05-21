@@ -67,12 +67,14 @@ ub('ucub', 'ucbuy')
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
+localStorage.setItem('aeuc', document.getElementById('aeuc').innerText);
 localStorage.setItem('progress', progress);
 localStorage.setItem('prestige', prestige);
 localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
 progress = localStorage.getItem('progress');
 prestige = localStorage.getItem('prestige');
+document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
 d = parseInt(localStorage.getItem('d'));">Load</button>
 <br><br>
 
