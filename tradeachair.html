@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,11 +68,15 @@ ub('ucub', 'ucbuy')
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
+localStorage.setItem('c', localStorage.getItem('a'));
+localStorage.setItem('d', localStorage.getItem('b'));
 localStorage.setItem('aeuc', document.getElementById('aeuc').innerText);
 localStorage.setItem('progress', progress);
 localStorage.setItem('prestige', prestige);
 localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
+localStorage.setItem('a', localStorage.getItem('c'));
+localStorage.setItem('b', localStorage.getItem('d'));
 progress = localStorage.getItem('progress');
 prestige = localStorage.getItem('prestige');
 document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
@@ -447,4 +452,3 @@ localStorage.setItem('a', 'b');
 
 </body>
 </html>
-<!-- Dale can sometimes be an idiot! -->
