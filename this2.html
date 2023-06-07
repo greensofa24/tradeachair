@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<button onclick="
+document.querySelector('input').style.display = 'inline';
+document.querySelector('input').focus();
+this.style.display = 'none';
+t = 0;
+setTimeout(function(){t = 1; if(document.querySelector('button').innerText != 'Next'){document.querySelector('button').innerText = 'Try Again';} document.querySelector('button').style.display = 'inline'; document.querySelector('input').style.display = 'none';}, 5000);">Start</button>
+<input style="display:none;" onkeypress="
+if(event.which = '13'){
+document.querySelector('button').innerText = 'Next';
+document.querySelector('button').style.display = 'inline';
+this.style.display = 'none'
+}">
+</body>
+</html>
