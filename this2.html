@@ -9,12 +9,18 @@ document.querySelector('input').style.display = 'inline';
 document.querySelector('input').focus();
 this.style.display = 'none';
 t = 0;
-setTimeout(function(){t = 1; if(document.querySelector('button').innerText != 'Next'){document.querySelector('button').innerText = 'Try Again';} document.querySelector('button').style.display = 'inline'; document.querySelector('input').style.display = 'none';}, 5000);">Start</button>
+document.querySelector('p').style.display = 'block';
+setTimeout(function(){t = 1; if(document.querySelector('button').innerText != 'Next'){document.querySelector('button').innerText = 'Try Again';} document.querySelector('button').style.display = 'inline';
+document.querySelector('p').style.display = 'none';
+document.querySelector('input').style.display = 'none';}, 5000);">Start</button>
+<p style=display:none;>Within 5 seconds type dale made magic chairs</p>
 <input style="display:none;" onkeypress="
-if(event.which = '13'){
+if(event.key == 'Enter'){
+if(document.querySelector('input') = 'dale made magic chairs')
 document.querySelector('button').innerText = 'Next';
 document.querySelector('button').style.display = 'inline';
-this.style.display = 'none'
+document.querySelector('p').style.display = 'none';
+this.style.display = 'none';
 }">
 </body>
 </html>
