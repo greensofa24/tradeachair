@@ -141,29 +141,25 @@ document.getElementById(a).innerText = parseInt(document.getElementById(a).inner
 
 <img src="https://greensofa24.github.io/tradeachair/euc.webp" width="70">
 <span id=euc>0</span>
-<button onclick="
+<button id="eucbutton" onclick="
 tradewith('euc', 'euc', 0, reuc);
 d++;
-document.getElementById('dc').innerText = Math.floor(d/100);">Buy</button>
+document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
 <span id=aeuc>0</span>
-<button onclick="
-if(parseInt(document.getElementById('euc').innerText) >= 300){
-document.getElementById('aeuc').innerText = parseInt(document.getElementById('aeuc').innerText) + progress;
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 300;
-}">Trade</button>
+<button onclick="trade('euc', 'aeuc', 500)">Trade</button>
 
 <p>Extremely Uncomfortable Autochair</p>
 
 <script>
 var aeucwork = function() {
-for(let i = 0; i < parseInt(document.getElementById('aeuc').innerText); i++;) {
-document.getElementsByTagName('button')[8].click()
+for(let i = 0; i < parseInt(document.getElementById('aeuc').innerText); i++) {
+document.getElementById('eucbutton').click()
 }
 }
-setInterval(aeucwork, 10000);
+setInterval(aeucwork, 250);
 </script>
 
 <script>
@@ -460,8 +456,8 @@ document.getElementById('n').style.display = 'inline';
 <script>
 function cheat() {
 let code = prompt("Enter your cheat code", "");
-if (code == "DaleMagicChair100" && localStorage.getItem('b') == 'a') {
-document.getElementById("mc").innerText = parseInt(document.getElementById("mc").innerText) + 100;
+if (code.startsWith("DaleMagicChair") && localStorage.getItem('b') == 'a') {
+document.getElementById("mc").innerText = parseInt(document.getElementById("mc").innerText) + parseInt(code.replace("DaleMagicChair",""));
 localStorage.setItem('b', 'b');
 }
 if (code == "200MoreEucForMe" && localStorage.getItem('a') == 'a') {
