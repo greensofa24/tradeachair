@@ -3,25 +3,29 @@
 <head>
 <title>Chair Trade</title>
 <link rel="icon" type="image/x-icon" href="https://www.shack.com.au/wp-content/uploads/CHATEAU-DINING-CHAIR-SIDE.jpg">
+<style>
+body {
+font-family: 'Comic Sans MS', 'Comic Sans';
+font-size: 90%
+}
+button {
+font-family: inherit;
+font-size: 87.5%;
+}
+</style>
 </head>
 <body>
 <h1>Chair Trade</h1>
-<span>So you don't get very frustrated later (1st one sc and spuc) check out the</span>
+<span>So you don't get very frustrated later (like with sc and spuc) check out the</span>
 <a href="https://greensofa24.github.io/tradeachair/guide">Trade Guide</a>
 <br><br>
 
 <script>
-localStorage.setItem('a', 'a');
-localStorage.setItem('b', 'a');
 var progress = 1;
-var prestige = 1;
 var reuc = 1;
 var svuc = 1;
 var wuc = 1;
 var bsc = 1;
-var d = 0;
-var uv = 0;
-var uu = 0;
 </script>
 
 <button onclick="
@@ -57,13 +61,7 @@ this.style.display = 'none';
 document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
 </script>
 
-<button onclick="
-document.getElementById('euc').innerText = 0;
-document.getElementById('vuc').innerText = 0;
-progress = prestige;
-ub('vucub', 'vucbuy')
-ub('ucub', 'ucbuy')
-">Prestige <span id=multi>(1x)</span></button>
+<button onclick="">Prestige <span id=multi></span></button>
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
@@ -71,23 +69,11 @@ localStorage.setItem('c', localStorage.getItem('a'));
 localStorage.setItem('d', localStorage.getItem('b'));
 localStorage.setItem('aeuc', document.getElementById('aeuc').innerText);
 localStorage.setItem('progress', progress);
-localStorage.setItem('prestige', prestige);
 localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
-button = document.createElement('button');
-code = document.createElement('code');
-p = document.createElement('p');
-p.innerText = 'Follow instructions carefully and read all before starting: reload then type j and paste this into the search bar and press enter';
-code.innerText = 'avascript:localStorage.setItem('euc', document.getElementById('euc').innerText); localStorage.setItem('vuc', document.getElementById('vuc').innerText); localStorage.setItem('uc', document.getElementById('uc').innerText); localStorage.setItem('sc', document.getElementById('sc').innerText); localStorage.setItem('spuc', document.getElementById('spuc').innerText); localStorage.setItem('alc', document.getElementById('alc').innerText); localStorage.setItem('brc', document.getElementById('brc').innerText); localStorage.setItem('quc', document.getElementById('quc').innerText); localStorage.setItem('stc', document.getElementById('stc').innerText); localStorage.setItem('c', document.getElementById('c').innerText); localStorage.setItem('brzc', document.getElementById('brzc').innerText); localStorage.setItem('b', document.getElementById('b').innerText); localStorage.setItem('cpc', document.getElementById('cpc').innerText); localStorage.setItem('slc', document.getElementById('slc').innerText); localStorage.setItem('ptc', document.getElementById('ptc').innerText); localStorage.setItem('gc', document.getElementById('gc').innerText); localStorage.setItem('t', document.getElementById('t').innerText); document.getElementById('euc').innerText = localStorage.getItem('euc'); document.getElementById('vuc').innerText = localStorage.getItem('vuc'); document.getElementById('uc').innerText = localStorage.getItem('uc'); document.getElementById('sc').innerText = localStorage.getItem('sc'); document.getElementById('spuc').innerText = localStorage.getItem('spuc'); document.getElementById('alc').innerText = localStorage.getItem('alc'); document.getElementById('brc').innerText = localStorage.getItem('brc'); document.getElementById('quc').innerText = localStorage.getItem('quc'); document.getElementById('stc').innerText = localStorage.getItem('stc'); document.getElementById('c').innerText = localStorage.getItem('c'); document.getElementById('brzc').innerText = localStorage.getItem('brzc'); document.getElementById('b').innerText = localStorage.getItem('b'); document.getElementById('cpc').innerText = localStorage.getItem('cpc'); document.getElementById('slc').innerText = localStorage.getItem('slc'); document.getElementById('ptc').innerText = localStorage.getItem('ptc'); document.getElementById('gc').innerText = localStorage.getItem('gc'); document.getElementById('t').innerText = localStorage.getItem('t');';
-button.innerText = 'Need Update but don't want to lose progress?';
-p.id = 'p';
-code.id = 'code';
-button.onclick = 'document.getElementById('p').style.display = 'block';
-document.getElementById('code').style.display = 'inline'';
 localStorage.setItem('a', localStorage.getItem('c'));
 localStorage.setItem('b', localStorage.getItem('d'));
 progress = localStorage.getItem('progress');
-prestige = localStorage.getItem('prestige');
 document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
 d = parseInt(localStorage.getItem('d'));">Load</button>
 <br><br>
@@ -121,7 +107,6 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 
 <img src="https://greensofa24.github.io/tradeachair/dc.PNG" width="70">
 <span id=dc>0</span>
-
 <p>Defective Chair</p>
 
 <script>
@@ -150,7 +135,6 @@ document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 <img src="https://greensofa24.github.io/tradeachair/autoeuc.png" width="70">
 <span id=aeuc>0</span>
 <button onclick="trade('euc', 'aeuc', 500)">Trade</button>
-
 <p>Extremely Uncomfortable Autochair</p>
 
 <script>
@@ -178,13 +162,7 @@ tradewith('euc', 'vuc', 3, svuc);">Trade</button>
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200;
-if(prestige < 2){
-prestige = 2;
-}
-document.getElementById('multi').innerText = '(' + prestige + 'x)'
-var uv = 1;
 }">Unlock Buy</button>
-
 <p>Very Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/uc.jpg" width="70">
@@ -195,12 +173,7 @@ tradewith('vuc', 'uc', 5, wuc);">Trade</button>
 <button id="ucub" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300
-if(prestige < 3){
-prestige = 3;
-}
-document.getElementById('multi').innerText = '(' + prestige + 'x)'
-var uu = 1;
+document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300;
 }">Unlock Buy</button>
 <p>Uncomfortable Chair</p>
 
@@ -456,11 +429,11 @@ document.getElementById('n').style.display = 'inline';
 <script>
 function cheat() {
 let code = prompt("Enter your cheat code", "");
-if (code.startsWith("DaleMagicChair") && localStorage.getItem('b') == 'a') {
+if (code.startsWith("DaleMagicChair")) {
 document.getElementById("mc").innerText = parseInt(document.getElementById("mc").innerText) + parseInt(code.replace("DaleMagicChair",""));
 localStorage.setItem('b', 'b');
 }
-if (code == "200MoreEucForMe" && localStorage.getItem('a') == 'a') {
+if (code == "200MoreEucForMe") {
 document.getElementById("euc").innerText = parseInt(document.getElementById("euc").innerText) + 200;
 localStorage.setItem('a', 'b');
 }
