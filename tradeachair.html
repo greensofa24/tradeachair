@@ -17,15 +17,20 @@ font-size: 87.5%;
 <body>
 <h1>Chair Trade</h1>
 <span>So you don't get very frustrated later (like with sc and spuc) check out the</span>
-<a href="https://greensofa24.github.io/tradeachair/guide">Trade Guide</a>
+<a href="https://greensofa24.github.io/tradeachair/guide" target=”_blank”>Trade Guide</a>
 <br><br>
 
 <script>
-var progress = 1;
-var reuc = 1;
-var svuc = 1;
-var wuc = 1;
-var bsc = 1;
+var prestige = 1;
+var clicks = 0;
+var preprestige = 1;
+var multi = 1;
+setInterval(function(){document.getElementById("prestige").innerText = "Prestige (" + preprestige + "x)"}, 10);
+
+/*document.addEventListener("click", function(){
+clicks += 1;
+preprestige += 0.2 / clicks ** 1.25;
+});*/
 </script>
 
 <button onclick="
@@ -61,48 +66,30 @@ this.style.display = 'none';
 document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
 </script>
 
-<button onclick="">Prestige <span id=multi></span></button>
+<button id=prestige onclick="prestige = preprestige">Prestige (1x)<span id=multi></span></button>
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
 localStorage.setItem('c', localStorage.getItem('a'));
 localStorage.setItem('d', localStorage.getItem('b'));
 localStorage.setItem('aeuc', document.getElementById('aeuc').innerText);
-localStorage.setItem('progress', progress);
+localStorage.setItem('prestige', prestige);
 localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
 localStorage.setItem('a', localStorage.getItem('c'));
 localStorage.setItem('b', localStorage.getItem('d'));
-progress = localStorage.getItem('progress');
+prestige = localStorage.getItem('prestige');
 document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
 d = parseInt(localStorage.getItem('d'));">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
-<button id=reuc style="width: 13%" onmouseover="this.textContent = 'Euc x2'" onmouseout="this.textContent = 'Rounder Eucs (1000euc)'" onclick="
-if(parseInt(document.getElementById('euc').innerText) >= 1000){
-reuc += 1;
-document.getElementById('reuc').style.display = 'none';
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000
-}">Rounder Eucs (1000euc)</button>
-<button id=svuc style="width: 13%" onmouseover="this.textContent = 'Vuc x2'" onmouseout="this.textContent = 'Smoother Vucs (2500vuc)'" onclick="
-if(parseInt(document.getElementById('vuc').innerText) >= 2500){
-svuc += 1;
-document.getElementById('svuc').style.display = 'none';
-document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 2500
-}">Smoother Vucs (2500vuc)</button>
-<button id=wuc style="width: 13%" onmouseover="this.textContent = 'Uc x2'" onmouseout="this.textContent = 'Warmer Ucs (5000uc)'" onclick="
-if(parseInt(document.getElementById('uc').innerText) >= 5000){
-wuc += 1;
-document.getElementById('wuc').style.display = 'none';
-document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) - 5000
-}">Warmer Ucs (5000uc)</button>
-<button id=bsc style="width: 13%" onmouseover="this.textContent = 'Sc x2'" onmouseout="this.textContent = 'Bigger Scs (7500sc)'" onclick="
-if(parseInt(document.getElementById('sc').innerText) >= 7500){
-bsc += 1;
-document.getElementById('bsc').style.display = 'none';
-document.getElementById('sc').innerText = parseInt(document.getElementById('sc').innerText) - 7500
-}">Bigger Scs (7500sc)</button>
+<button id=multi1 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1200euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 1200){
+multi *= 2;
+document.getElementById('multi1').style.display = 'none';
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1200;
+}">2x Multi (1200euc)</button>
 <br><br>
 
 <img src="https://greensofa24.github.io/tradeachair/dc.PNG" width="70">
@@ -110,16 +97,18 @@ document.getElementById('sc').innerText = parseInt(document.getElementById('sc')
 <p>Defective Chair</p>
 
 <script>
-function tradewith(a, b, c, d) {
-if(parseInt(document.getElementById(a).innerText) >= c){
-document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + progress * d;
-document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c
-}
-}
 function trade(a, b, c) {
 if(parseInt(document.getElementById(a).innerText) >= c){
-document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + progress;
-document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c
+document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + prestige * multi;
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c;
+}
+}
+
+function trade2(a, b, c, d, e) {
+if(parseInt(document.getElementById(a).innerText) >= d && parseInt(document.getElementById(b).innerText) >= e){
+document.getElementById(c).innerText = parseInt(document.getElementById(c).innerText) + prestige * multi;
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - d;
+document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) - e;
 }
 }
 </script>
@@ -127,7 +116,7 @@ document.getElementById(a).innerText = parseInt(document.getElementById(a).inner
 <img src="https://greensofa24.github.io/tradeachair/euc.webp" width="70">
 <span id=euc>0</span>
 <button id="eucbutton" onclick="
-tradewith('euc', 'euc', 0, reuc);
+trade('euc', 'euc', 0);
 d++;
 document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
@@ -156,8 +145,8 @@ document.getElementById(b).style.display = 'none';
 <img src="https://greensofa24.github.io/tradeachair/vuc.jpg" width="70">
 <span id=vuc>0</span>
 <button onclick="
-tradewith('euc', 'vuc', 3, svuc);">Trade</button>
-<button id="vucbuy" onclick="document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) + progress * svuc" style="display:none">Buy</button>
+trade('euc', 'vuc', 3);">Trade</button>
+<button id="vucbuy" onclick="trade('euc', 'vuc', 0);" style="display:none">Buy</button>
 <button id="vucub" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
@@ -168,8 +157,8 @@ document.getElementById('euc').innerText = parseInt(document.getElementById('euc
 <img src="https://greensofa24.github.io/tradeachair/uc.jpg" width="70">
 <span id=uc>0</span>
 <button onclick="
-tradewith('vuc', 'uc', 5, wuc);">Trade</button>
-<button id="ucbuy" onclick="document.getElementById('uc').innerText = parseInt(document.getElementById('uc').innerText) + progress * wuc" style="display:none">Buy</button>
+trade('vuc', 'uc', 5);">Trade</button>
+<button id="ucbuy" onclick="trade('euc', 'uc', 0);" style="display:none">Buy</button>
 <button id="ucub" onclick="
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
@@ -180,7 +169,7 @@ document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc
 <img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
 <span id=sc>0</span>
 <button onclick="
-tradewith('uc', 'sc', 3, bsc);">Trade</button>
+trade('uc', 'sc', 3);">Trade</button>
 <p>Stone Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/spuc.jpg" width="70">
@@ -230,6 +219,12 @@ trade('stc', 'brzc', 3);">Trade</button>
 <button onclick="
 trade('c', 'b', 3);">Trade</button>
 <p>Bench</p>
+
+<img src="https://greensofa24.github.io/tradeachair/cchair.PNG" width="70">
+<span id=cc>0</span>
+<button onclick="
+trade2('c', 'quc', 'cc', 2, 3);">Trade</button>
+<p>Comfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/cpc.jpg" width="70">
 <span id=cpc>0</span>
