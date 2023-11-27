@@ -25,11 +25,12 @@ var prestige = 1;
 var clicks = 0;
 var preprestige = 1;
 var multi = 1;
+var eucmulti = 1;
 setInterval(function(){document.getElementById("prestige").innerText = "Prestige (" + preprestige + "x)"}, 10);
 
 /*document.addEventListener("click", function(){
 clicks += 1;
-preprestige += 0.2 / clicks ** 1.25;
+preprestige += 0.2 / clicks ** 15;
 });*/
 </script>
 
@@ -84,12 +85,36 @@ d = parseInt(localStorage.getItem('d'));">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
-<button id=multi1 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1200euc)'" onclick="
-if(parseInt(document.getElementById('euc').innerText) >= 1200){
+<button id=multi1 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1K euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 1000){
 multi *= 2;
 document.getElementById('multi1').style.display = 'none';
-document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1200;
-}">2x Multi (1200euc)</button>
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000;
+}">2x Multi (1K euc)</button>
+<button id=multi2 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (10K euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 10000){
+multi *= 2;
+document.getElementById('multi2').style.display = 'none';
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000;
+}">2x Multi (10K euc)</button>
+<button id=eucmulti1 style="width: 17%" onmouseover="this.textContent = 'Extremely uncomfortable chairs x3'" onmouseout="this.textContent = '3x Euc Multi (10K euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 10000){
+eucmulti *= 3;
+document.getElementById('eucmulti1').style.display = 'none';
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000;
+}">3x Euc Multi (10K euc)</button>
+<button id=multi3 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (100K euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 100000){
+multi *= 2;
+document.getElementById('multi3').style.display = 'none';
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 100000;
+}">2x Multi (100K euc)</button>
+<button id=multi4 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1M euc)'" onclick="
+if(parseInt(document.getElementById('euc').innerText) >= 1000000){
+multi *= 2;
+document.getElementById('multi4').style.display = 'none';
+document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000000;
+}">2x Multi (1M euc)</button>
 <br><br>
 
 <img src="https://greensofa24.github.io/tradeachair/dc.PNG" width="70">
@@ -100,6 +125,13 @@ document.getElementById('euc').innerText = parseInt(document.getElementById('euc
 function trade(a, b, c) {
 if(parseInt(document.getElementById(a).innerText) >= c){
 document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + prestige * multi;
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c;
+}
+}
+
+function tradeand(a, b, c, d) {
+if(parseInt(document.getElementById(a).innerText) >= c){
+document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + prestige * multi * d;
 document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c;
 }
 }
@@ -116,7 +148,7 @@ document.getElementById(b).innerText = parseInt(document.getElementById(b).inner
 <img src="https://greensofa24.github.io/tradeachair/euc.webp" width="70">
 <span id=euc>0</span>
 <button id="eucbutton" onclick="
-trade('euc', 'euc', 0);
+tradeand('euc', 'euc', 0, eucmulti);
 d++;
 document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 <p>Extremely Uncomfortable Chair</p>
@@ -127,12 +159,13 @@ document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 <p>Extremely Uncomfortable Autochair</p>
 
 <script>
-var aeucwork = function() {
-for(let i = 0; i < parseInt(document.getElementById('aeuc').innerText); i++) {
-document.getElementById('eucbutton').click()
+function automate(a, b) {
+for(let i = 0; i < parseInt(b); i++) {
+document.getElementById(a).nextElementSibling.click();
 }
 }
-setInterval(aeucwork, 250);
+
+setInterval(function(){automate('euc', document.getElementById('aeuc').innerText)}, 250);
 </script>
 
 <script>
