@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
+<title>Magic chair trials part 2</title>
 </head>
 <body>
-<button onclick="
-document.querySelector('input').style.display = 'inline';
-document.querySelector('input').focus();
-this.style.display = 'none';
-t = 0;
+<script>
+var t = 1;
+</script>
+<button onclick="this.style.display = 'none';
 document.querySelector('p').style.display = 'block';
-setTimeout(function(){t = 1; if(document.querySelector('button').innerText != 'Next'){document.querySelector('button').innerText = 'Try Again';} document.querySelector('button').style.display = 'inline';
-document.querySelector('p').style.display = 'none';
-document.querySelector('input').style.display = 'none';}, 5000);">Start</button>
-<p style=display:none;>Within 5 seconds type dale made magic chairs</p>
-<input style="display:none;" onkeypress="
-if(event.key == 'Enter'){
-if(document.querySelector('input') = 'dale made magic chairs')
-document.querySelector('button').innerText = 'Next';
+document.querySelector('input').style.display = 'inline';
+
+if(t == 1){
+setTimeout(function(){if(document.querySelector('input').value == 'dale invented magic chairs'){document.querySelector('button').innerText = 'Next';
+t = 2;
+} else {
+document.querySelector('button').innerText = 'Try again';
+}
 document.querySelector('button').style.display = 'inline';
 document.querySelector('p').style.display = 'none';
-this.style.display = 'none';
-}">
+document.querySelector('input').value = '';
+document.querySelector('input').style.display = 'none';
+}, 7000);
+}
+
+if(t == 2){
+document.querySelector('p').innerText = 'Within 12 seconds type I wonder how many of these there could be (with a capital I)';
+setTimeout(function(){if(document.querySelector('input').value == 'I wonder how many of these there could be'){document.querySelector('button').innerText = 'Next';
+t = 3;
+} else {
+document.querySelector('button').innerText = 'Try again';
+}
+document.querySelector('button').style.display = 'inline';
+document.querySelector('p').style.display = 'none';
+document.querySelector('input').value = '';
+document.querySelector('input').style.display = 'none';
+}, 12000);
+}
+
+if(t == 3){
+document.querySelector('p').innerText = 'Within 20 seconds type these tests are getting really, really, very, really annoying';
+setTimeout(function(){if(document.querySelector('input').value == 'these tests are getting really, really, very, really annoying'){document.querySelector('button').innerText = 'Next';
+t = 4;
+} else {
+document.querySelector('button').innerText = 'Try again';
+}
+document.querySelector('button').style.display = 'inline';
+document.querySelector('p').style.display = 'none';
+document.querySelector('input').value = '';
+document.querySelector('input').style.display = 'none';
+}, 25000);
+}">Start</button>
+<p style=display:none;>Within 7 seconds type dale invented magic chairs</p>
+<input style="display:none;">
 </body>
 </html>
