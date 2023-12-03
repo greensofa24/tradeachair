@@ -7,51 +7,86 @@
 <script>
 var t = 1;
 </script>
-<button onclick="this.style.display = 'none';
-document.querySelector('p').style.display = 'block';
-document.querySelector('input').style.display = 'inline';
+<button id="t2b" onclick="this.style.display = 'none';
+document.getElementById('t2p').style.display = 'block';
+document.getElementById('t2i').style.display = 'inline';
+document.getElementById('t2i').focus();
 
 if(t == 1){
-setTimeout(function(){if(document.querySelector('input').value == 'dale invented magic chairs'){document.querySelector('button').innerText = 'Next';
+setTimeout(function(){if(document.getElementById('t2i').value == 'dale invented magic chairs'){document.getElementById('t2b').innerText = 'Next';
 t = 2;
 } else {
-document.querySelector('button').innerText = 'Try again';
+document.getElementById('t2b').innerText = 'Try again';
 }
-document.querySelector('button').style.display = 'inline';
-document.querySelector('p').style.display = 'none';
-document.querySelector('input').value = '';
-document.querySelector('input').style.display = 'none';
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
 }, 7000);
 }
 
 if(t == 2){
-document.querySelector('p').innerText = 'Within 12 seconds type I wonder how many of these there could be (with a capital I)';
-setTimeout(function(){if(document.querySelector('input').value == 'I wonder how many of these there could be'){document.querySelector('button').innerText = 'Next';
+document.getElementById('t2p').innerText = 'Within 12 seconds type I wonder how many of these there could be (with a capital I)';
+setTimeout(function(){if(document.getElementById('t2i').value == 'I wonder how many of these there could be'){document.getElementById('t2b').innerText = 'Next';
 t = 3;
 } else {
-document.querySelector('button').innerText = 'Try again';
+document.getElementById('t2b').innerText = 'Try again';
 }
-document.querySelector('button').style.display = 'inline';
-document.querySelector('p').style.display = 'none';
-document.querySelector('input').value = '';
-document.querySelector('input').style.display = 'none';
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
 }, 12000);
 }
 
 if(t == 3){
-document.querySelector('p').innerText = 'Within 20 seconds type these tests are getting really, really, very, really annoying';
-setTimeout(function(){if(document.querySelector('input').value == 'these tests are getting really, really, very, really annoying'){document.querySelector('button').innerText = 'Next';
+document.getElementById('t2p').innerText = 'Within 20 seconds type these tests are getting really, really, very, really annoying';
+setTimeout(function(){if(document.getElementById('t2i').value == 'these tests are getting really, really, very, really annoying'){document.getElementById('t2b').innerText = 'Next';
 t = 4;
 } else {
-document.querySelector('button').innerText = 'Try again';
+document.getElementById('t2b').innerText = 'Try again';
 }
-document.querySelector('button').style.display = 'inline';
-document.querySelector('p').style.display = 'none';
-document.querySelector('input').value = '';
-document.querySelector('input').style.display = 'none';
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
 }, 25000);
+}
+
+if(t == 4){
+document.getElementById('t2p').innerText = 'Within 1 second type dale invented magic chairs (there is a trick!)';
+setTimeout(function(){if(document.getElementById('t2i').value == 'dale invented magic chairs'){document.getElementById('t2b').innerText = 'Next';
+t = 5;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 1000);
+}
+
+if(t == 5){
+document.getElementById('t2p').innerText = 'Within half a second type these tests are getting really, really, very, really annoying (there is a trick!)';
+setTimeout(function(){if(document.getElementById('t2i').value == 'these tests are getting really, really, very, really annoying'){document.getElementById('t2b').innerText = 'Finish';
+t = 6;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 500);
+}
+
+if(t == 6){
+document.getElementById('t2b').style.display = 'none';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').style.display = 'none';
 }">Start</button>
-<p style=display:none;>Within 7 seconds type dale invented magic chairs</p>
-<input style="display:none;">
+<p id="t2p" style=display:none;>Within 7 seconds type dale invented magic chairs</p>
+<input id="t2i" style="display:none;">
 </body>
 </html>
