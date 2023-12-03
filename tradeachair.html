@@ -12,6 +12,10 @@ button {
 font-family: inherit;
 font-size: 87.5%;
 }
+.acheivement {
+display: none;
+color: red;
+}
 </style>
 </head>
 <body>
@@ -27,6 +31,8 @@ var preprestige = 1;
 var multi = 1;
 var eucmulti = 1;
 setInterval(function(){document.getElementById("prestige").innerText = "Prestige (" + preprestige + "x)"}, 10);
+var tn = 1;
+var t = 1;
 
 /*document.addEventListener("click", function(){
 clicks += 1;
@@ -44,6 +50,7 @@ var p = document.getElementsByTagName('p');
 var s = document.getElementsByTagName('span');
 var b = document.getElementsByTagName('button');
 var img = document.getElementsByTagName('img');
+var a = document.getElementsByClassName('acheivement');
 for (let i = 0; i < p.length; i++) {
 p[i].style.display = 'none';
 }
@@ -56,7 +63,11 @@ b[i].style.display = 'none';
 for (let i = 0; i < img.length; i++) {
 img[i].style.display = 'none';
 }
-">Acheivements</button>
+for (let i = 0; i < a.length; i++) {
+a[i].style.display = 'block';
+}">Acheivements</button>
+
+<p class="acheivement">Get 1 euc</p>
 
 <h1 id=a style="position:absolute; top:0px; display:none" onclick="
 document.body.innerHTML = localStorage.getItem('body');
@@ -71,14 +82,10 @@ document.getElementById('a').style.left = window.innerWidth - 65 + 'px'
 <br><br>
 
 <button onclick="localStorage.setItem('body', document.body.innerHTML);
-localStorage.setItem('c', localStorage.getItem('a'));
-localStorage.setItem('d', localStorage.getItem('b'));
 localStorage.setItem('aeuc', document.getElementById('aeuc').innerText);
 localStorage.setItem('prestige', prestige);
 localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
-localStorage.setItem('a', localStorage.getItem('c'));
-localStorage.setItem('b', localStorage.getItem('d'));
 prestige = localStorage.getItem('prestige');
 document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
 d = parseInt(localStorage.getItem('d'));">Load</button>
@@ -184,7 +191,7 @@ trade('euc', 'vuc', 3);">Trade</button>
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200;
-}">Unlock Buy</button>
+}">Unlock Buy (200 euc)</button>
 <p>Very Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/uc.jpg" width="70">
@@ -197,7 +204,7 @@ if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300;
 }">Unlock Buy</button>
-<p>Uncomfortable Chair</p>
+<p>Uncomfortable Chair (300 vuc)</p>
 
 <img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
 <span id=sc>0</span>
@@ -309,7 +316,13 @@ trade('t', 'tb', 5);">Trade</button>
 
 <img src="https://greensofa24.github.io/tradeachair/magicchair.png" width="70">
 <span id=mc>0</span>
-<p>Magic Chair</p>
+<button id="mcbuy" onclick="trade('euc', 'vuc', 0);" style="display:none">Buy</button>
+<button id="mcub" onclick="
+if(parseInt(document.getElementById('d').innerText) >= 10000){
+ub('mcbuy', 'mcub');
+document.getElementById('d').innerText = parseInt(document.getElementById('d').innerText) - 10000;
+}">Unlock Buy</button>
+<p>Magic Chair (10K dc)</p>
 
 <script>
 var n = 0;
@@ -334,7 +347,7 @@ for(let c = 1; c < 7452; c++) {
 document.body.appendChild(dont.cloneNode(true));
 }
 document.body.appendChild(click);
-for(let c = 1; c < 4487; c++) {
+for(let c = 1; c < 4490; c++) {
 document.body.appendChild(dont.cloneNode(true));
 }
 }
@@ -375,10 +388,12 @@ if (n == 3) {document.getElementById('t4').style.display = 'inline';
 document.getElementById('hb1').style.display = 'inline';
 setInterval(add, 500);}
 if (n == 4) {
-create()
+document.getElementsByClassName('brspecial')[2].remove();
+create();
 }
 if (n == 5) {
 document.body.innerHTML = localStorage.getItem('body');
+tn = 2;
 }">Start (1/5)</button>
 <button id=t2 style="position: absolute; display:none; user-select: none" onclick="this.style.display = 'none';
 document.getElementById('n').style.display = 'inline';
@@ -420,8 +435,8 @@ h = 2;
 } else {
 document.getElementById('hb1').innerText = document.getElementById('hb1').innerText.replace('–', '');
 h = 1;
-}">Click<br>/ &nbsp; || &nbsp; \<br>||</button>
-<br>
+}">Click<br class="brspecial">/ &nbsp; || &nbsp; \<br class="brspecial">||</button>
+<br class="brspecial">
 <p id=hb1 style="display:none; color:lightgreen; user-select: none">————————————————————————</p>
 
 <button onclick="
@@ -434,10 +449,11 @@ var br = document.getElementsByTagName('br');
 var s = document.getElementsByTagName('span');
 var b = document.getElementsByTagName('button');
 var img = document.getElementsByTagName('img');
+var brspecial = document.getElementsByClassName('brspecial');
 for (let i = 0; i < p.length; i++) {
 p[i].style.display = 'none';
 }
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < br.length; i++) {
 br[i].style.display = 'none';
 }
 for (let i = 0; i < s.length; i++) {
@@ -449,8 +465,98 @@ b[i].style.display = 'none';
 for (let i = 0; i < img.length; i++) {
 img[i].style.display = 'none';
 }
+if(tn == 1){
 document.getElementById('n').style.display = 'inline';
-">Start Trials</button>
+for (let i = 0; i < brspecial.length; i++) {
+brspecial[i].style.display = 'inline';
+}
+}
+if(tn == 2){
+document.getElementById('t2b').style.display = 'inline';
+document.body.style.overflow = 'hidden';
+}">Start Trials</button>
+
+<button id="t2b" style="display:none;" onclick="this.style.display = 'none';
+document.getElementById('t2p').style.display = 'block';
+document.getElementById('t2i').style.display = 'inline';
+document.getElementById('t2i').focus();
+
+if(t == 1){
+setTimeout(function(){if(document.getElementById('t2i').value == 'dale invented magic chairs'){document.getElementById('t2b').innerText = 'Next';
+t = 2;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 7000);
+}
+
+if(t == 2){
+document.getElementById('t2p').innerText = 'Within 12 seconds type I wonder how many of these there could be (with a capital I)';
+setTimeout(function(){if(document.getElementById('t2i').value == 'I wonder how many of these there could be'){document.getElementById('t2b').innerText = 'Next';
+t = 3;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 12000);
+}
+
+if(t == 3){
+document.getElementById('t2p').innerText = 'Within 20 seconds type these tests are getting really, really, very, really annoying';
+setTimeout(function(){if(document.getElementById('t2i').value == 'these tests are getting really, really, very, really annoying'){document.getElementById('t2b').innerText = 'Next';
+t = 4;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 25000);
+}
+
+if(t == 4){
+document.getElementById('t2p').innerText = 'Within 1 second type dale invented magic chairs (there is a trick!)';
+setTimeout(function(){if(document.getElementById('t2i').value == 'dale invented magic chairs'){document.getElementById('t2b').innerText = 'Next';
+t = 5;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 1000);
+}
+
+if(t == 5){
+document.getElementById('t2p').innerText = 'Within half a second type these tests are getting really, really, very, really annoying (there is a trick!)';
+setTimeout(function(){if(document.getElementById('t2i').value == 'these tests are getting really, really, very, really annoying'){document.getElementById('t2b').innerText = 'Finish';
+t = 6;
+} else {
+document.getElementById('t2b').innerText = 'Try again';
+}
+document.getElementById('t2b').style.display = 'inline';
+document.getElementById('t2p').style.display = 'none';
+document.getElementById('t2i').value = '';
+document.getElementById('t2i').style.display = 'none';
+}, 500);
+}
+
+if(t == 6){
+document.body.innerHTML = localStorage.getItem('body');
+document.body.style.overflow = 'auto';
+tn = 3;
+}">Start</button>
+<p id="t2p" style=display:none;>Within 7 seconds type dale invented magic chairs</p>
+<input id="t2i" style="display:none;">
 
 <button onclick="cheat()">Cheat Code</button>
 
@@ -459,11 +565,12 @@ function cheat() {
 let code = prompt("Enter your cheat code", "");
 if (code.startsWith("DaleMagicChair")) {
 document.getElementById("mc").innerText = parseInt(document.getElementById("mc").innerText) + parseInt(code.replace("DaleMagicChair",""));
-localStorage.setItem('b', 'b');
 }
 if (code == "200MoreEucForMe") {
 document.getElementById("euc").innerText = parseInt(document.getElementById("euc").innerText) + 200;
-localStorage.setItem('a', 'b');
+}
+if (code == "skip") {
+tn = 2;
 }
 }
 </script>
