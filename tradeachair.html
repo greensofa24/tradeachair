@@ -68,6 +68,48 @@ a[i].style.display = 'block';
 }">Acheivements</button>
 
 <p class="acheivement">Get 1 euc</p>
+<p class="acheivement">Get 1 vuc</p>
+<p class="acheivement">Accumulate 10 euc</p>
+<p class="acheivement">Get 1 uc</p>
+<p class="acheivement">Accumulate 10 vuc</p>
+<p class="acheivement">Get 1 sc</p>
+<p class="acheivement">Get 1 spuc</p>
+<p class="acheivement">Accumulate 100 euc</p>
+<p class="acheivement">Accumulate 10 uc</p>
+<p class="acheivement">Accumulate 100 vuc</p>
+<p class="acheivement">Accumulate 1K euc</p>
+<p class="acheivement">Accumulate 100 uc</p>
+<p class="acheivement">Accumulate 1K vuc</p>
+<p class="acheivement">Accumulate 10K euc</p>
+<p class="acheivement">Accumulate 1K uc</p>
+<p class="acheivement">Accumulate 10K vuc</p>
+
+<script>
+function a(a, b, c) {
+if(document.getElementById(a).innerText == b) {
+document.getElementsByClassName("acheivement")[c].style.color = "green"
+}
+}
+
+setInterval(function(){
+a("euc", "1", 0);
+a("vuc", "1", 1);
+a("euc", "10", 2);
+a("uc", "1", 3);
+a("vuc", "10", 4);
+a("sc", "1", 5);
+a("spuc", "1", 6);
+a("euc", "100", 7);
+a("uc", "10", 8);
+a("vuc", "100", 9);
+a("euc", "1K", 10);
+a("uc", "100", 11);
+a("vuc", "1K", 12);
+a("euc", "10K", 13);
+a("uc", "1K", 14);
+a("vuc", "10K", 15);
+}, 10);
+</script>
 
 <h1 id=a style="position:absolute; top:0px; display:none" onclick="
 document.body.innerHTML = localStorage.getItem('body');
@@ -203,8 +245,8 @@ trade('vuc', 'uc', 5);">Trade</button>
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300;
-}">Unlock Buy</button>
-<p>Uncomfortable Chair (300 vuc)</p>
+}">Unlock Buy (300 vuc)</button>
+<p>Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
 <span id=sc>0</span>
@@ -311,7 +353,7 @@ trade('gc', 't', 5);">Trade</button>
 <img src="https://greensofa24.github.io/tradeachair/thrench.png" width="70">
 <span id=tb>0</span>
 <button onclick="
-trade('t', 'tb', 5);">Trade</button>
+trade('t', 'tb', 3);">Trade</button>
 <p>Thrench</p>
 
 <img src="https://greensofa24.github.io/tradeachair/magicchair.png" width="70">
@@ -321,8 +363,8 @@ trade('t', 'tb', 5);">Trade</button>
 if(parseInt(document.getElementById('d').innerText) >= 10000){
 ub('mcbuy', 'mcub');
 document.getElementById('d').innerText = parseInt(document.getElementById('d').innerText) - 10000;
-}">Unlock Buy</button>
-<p>Magic Chair (10K dc)</p>
+}">Unlock Buy (10K dc)</button>
+<p>Magic Chair</p>
 
 <script>
 var n = 0;
@@ -393,6 +435,7 @@ create();
 }
 if (n == 5) {
 document.body.innerHTML = localStorage.getItem('body');
+document.getElementById('trials').innerText = 'Continue Trials (2/3)';
 tn = 2;
 }">Start (1/5)</button>
 <button id=t2 style="position: absolute; display:none; user-select: none" onclick="this.style.display = 'none';
@@ -439,7 +482,7 @@ h = 1;
 <br class="brspecial">
 <p id=hb1 style="display:none; color:lightgreen; user-select: none">————————————————————————</p>
 
-<button onclick="
+<button id="trials" onclick="
 localStorage.setItem('body', document.body.innerHTML);
 document.getElementsByTagName('h1')[0].style.display = 'none';
 document.getElementsByTagName('h3')[0].style.display = 'none';
@@ -474,7 +517,7 @@ brspecial[i].style.display = 'inline';
 if(tn == 2){
 document.getElementById('t2b').style.display = 'inline';
 document.body.style.overflow = 'hidden';
-}">Start Trials</button>
+}">Start Trials (1/3)</button>
 
 <button id="t2b" style="display:none;" onclick="this.style.display = 'none';
 document.getElementById('t2p').style.display = 'block';
@@ -553,6 +596,7 @@ document.getElementById('t2i').style.display = 'none';
 if(t == 6){
 document.body.innerHTML = localStorage.getItem('body');
 document.body.style.overflow = 'auto';
+document.getElementById('trials').innerText = 'Finish Trials (3/3)';
 tn = 3;
 }">Start</button>
 <p id="t2p" style=display:none;>Within 7 seconds type dale invented magic chairs</p>
