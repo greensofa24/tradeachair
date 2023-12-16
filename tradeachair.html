@@ -16,6 +16,10 @@ font-size: 87.5%;
 display: none;
 color: red;
 }
+bs {
+display: inline-block;
+transform: skew(10deg, 0deg);
+}
 </style>
 </head>
 <body>
@@ -33,6 +37,7 @@ var eucmulti = 1;
 setInterval(function(){document.getElementById("prestige").innerText = "Prestige (" + preprestige + "x)"}, 10);
 var tn = 1;
 var t = 1;
+var d = 0;
 
 /*document.addEventListener("click", function(){
 clicks += 1;
@@ -69,20 +74,20 @@ a[i].style.display = 'block';
 
 <p class="acheivement">Get 1 euc</p>
 <p class="acheivement">Get 1 vuc</p>
-<p class="acheivement">Accumulate 10 euc</p>
+<p class="acheivement">Accumulate 10 eucs</p>
 <p class="acheivement">Get 1 uc</p>
-<p class="acheivement">Accumulate 10 vuc</p>
+<p class="acheivement">Accumulate 10 vucs</p>
 <p class="acheivement">Get 1 sc</p>
 <p class="acheivement">Get 1 spuc</p>
-<p class="acheivement">Accumulate 100 euc</p>
-<p class="acheivement">Accumulate 10 uc</p>
-<p class="acheivement">Accumulate 100 vuc</p>
-<p class="acheivement">Accumulate 1K euc</p>
-<p class="acheivement">Accumulate 100 uc</p>
-<p class="acheivement">Accumulate 1K vuc</p>
-<p class="acheivement">Accumulate 10K euc</p>
-<p class="acheivement">Accumulate 1K uc</p>
-<p class="acheivement">Accumulate 10K vuc</p>
+<p class="acheivement">Accumulate 100 eucs</p>
+<p class="acheivement">Accumulate 10 ucs</p>
+<p class="acheivement">Accumulate 100 vucs</p>
+<p class="acheivement">Accumulate 1K eucs</p>
+<p class="acheivement">Accumulate 100 ucs</p>
+<p class="acheivement">Accumulate 1K vucs</p>
+<p class="acheivement">Accumulate 10K eucs</p>
+<p class="acheivement">Accumulate 1K ucs</p>
+<p class="acheivement">Accumulate 10K vucs</p>
 
 <script>
 function a(a, b, c) {
@@ -130,40 +135,40 @@ localStorage.setItem('d', d);">Save</button>
 <button onclick="document.body.innerHTML = localStorage.getItem('body');
 prestige = localStorage.getItem('prestige');
 document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
-d = parseInt(localStorage.getItem('d'));">Load</button>
+d = localStorage.getItem('d');">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
-<button id=multi1 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1K euc)'" onclick="
+<button id=multi1 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 1000){
 multi *= 2;
 document.getElementById('multi1').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000;
-}">2x Multi (1K euc)</button>
-<button id=multi2 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (10K euc)'" onclick="
+}">2x Multi (1K eucs)</button>
+<button id=multi2 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (10K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 10000){
 multi *= 2;
 document.getElementById('multi2').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000;
-}">2x Multi (10K euc)</button>
-<button id=eucmulti1 style="width: 17%" onmouseover="this.textContent = 'Extremely uncomfortable chairs x3'" onmouseout="this.textContent = '3x Euc Multi (10K euc)'" onclick="
+}">2x Multi (10K eucs)</button>
+<button id=eucmulti1 style="width: 17%" onmouseover="this.textContent = 'Extremely uncomfortable chairs x3'" onmouseout="this.textContent = '3x Euc Multi (10K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 10000){
 eucmulti *= 3;
 document.getElementById('eucmulti1').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000;
-}">3x Euc Multi (10K euc)</button>
-<button id=multi3 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (100K euc)'" onclick="
+}">3x Euc Multi (10K eucs)</button>
+<button id=multi3 style="width: 14%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (100K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 100000){
 multi *= 2;
 document.getElementById('multi3').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 100000;
-}">2x Multi (100K euc)</button>
+}">2x Multi (100K eucs)</button>
 <button id=multi4 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1M euc)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 1000000){
 multi *= 2;
 document.getElementById('multi4').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000000;
-}">2x Multi (1M euc)</button>
+}">2x Multi (1M eucs)</button>
 <br><br>
 
 <img src="https://greensofa24.github.io/tradeachair/dc.PNG" width="70">
@@ -233,7 +238,7 @@ trade('euc', 'vuc', 3);">Trade</button>
 if(parseInt(document.getElementById('euc').innerText) >= 200){
 ub('vucbuy', 'vucub');
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 200;
-}">Unlock Buy (200 euc)</button>
+}">Unlock Buy (200 eucs)</button>
 <p>Very Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/uc.jpg" width="70">
@@ -245,7 +250,7 @@ trade('vuc', 'uc', 5);">Trade</button>
 if(parseInt(document.getElementById('vuc').innerText) >= 300){
 ub('ucbuy', 'ucub');
 document.getElementById('vuc').innerText = parseInt(document.getElementById('vuc').innerText) - 300;
-}">Unlock Buy (300 vuc)</button>
+}">Unlock Buy (300 vucs)</button>
 <p>Uncomfortable Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/stonechair.png" width="70">
@@ -363,7 +368,7 @@ trade('t', 'tb', 3);">Trade</button>
 if(parseInt(document.getElementById('d').innerText) >= 10000){
 ub('mcbuy', 'mcub');
 document.getElementById('d').innerText = parseInt(document.getElementById('d').innerText) - 10000;
-}">Unlock Buy (10K dc)</button>
+}">Unlock Buy (10K dcs)</button>
 <p>Magic Chair</p>
 
 <script>
@@ -618,6 +623,6 @@ tn = 2;
 }
 }
 </script>
-Dale <i>invented</i> magic chairs
+<p>Dale <bs>"invented"</bs> magic chairs</p>
 </body>
 </html>
