@@ -16,6 +16,10 @@ font-size: 87.5%;
 display: none;
 color: red;
 }
+sbr {
+display: block;
+margin-top: 7.5px;
+}
 bs {
 display: inline-block;
 transform: skew(10deg, 0deg);
@@ -72,22 +76,22 @@ for (let i = 0; i < a.length; i++) {
 a[i].style.display = 'block';
 }">Acheivements</button>
 
-<p class="acheivement">Get 1 euc</p>
-<p class="acheivement">Get 1 vuc</p>
-<p class="acheivement">Accumulate 10 eucs</p>
-<p class="acheivement">Get 1 uc</p>
-<p class="acheivement">Accumulate 10 vucs</p>
-<p class="acheivement">Get 1 sc</p>
-<p class="acheivement">Get 1 spuc</p>
-<p class="acheivement">Accumulate 100 eucs</p>
-<p class="acheivement">Accumulate 10 ucs</p>
-<p class="acheivement">Accumulate 100 vucs</p>
-<p class="acheivement">Accumulate 1K eucs</p>
-<p class="acheivement">Accumulate 100 ucs</p>
-<p class="acheivement">Accumulate 1K vucs</p>
-<p class="acheivement">Accumulate 10K eucs</p>
-<p class="acheivement">Accumulate 1K ucs</p>
-<p class="acheivement">Accumulate 10K vucs</p>
+<p class="acheivement">Click<br>Get 1 euc</p>
+<p class="acheivement">Trade<br>Get 1 vuc</p>
+<p class="acheivement">Life Savings<br>Accumulate 10 eucs</p>
+<p class="acheivement">Cold<br>Get 1 uc</p>
+<p class="acheivement">Useless<br>Accumulate 10 vucs</p>
+<p class="acheivement">CHAIR!<br>Get 1 sc</p>
+<p class="acheivement">WORSE MORE EXPENSIVE CHAIR!<br>Get 1 spuc</p>
+<p class="acheivement">Not Trading<br>Accumulate 100 eucs</p>
+<p class="acheivement">Indesicive<br>Accumulate 10 ucs</p>
+<p class="acheivement">Not Trading, Traded Edition<br>Accumulate 100 vucs</p>
+<p class="acheivement">Worth a cent<br>Accumulate 1K eucs</p>
+<p class="acheivement">Decacube Squared Accumulate 100 ucs</p>
+<p class="acheivement">Upgrade<br>Accumulate 1K vucs</p>
+<p class="acheivement">Untradable<br>Accumulate 10K eucs</p>
+<p class="acheivement">Decacube Cubed<br>Accumulate 1K ucs</p>
+<p class="acheivement">Useful?<br>Accumulate 10K vucs</p>
 
 <script>
 function a(a, b, c) {
@@ -139,36 +143,36 @@ d = localStorage.getItem('d');">Load</button>
 <br><br>
 
 <h3>Upgrades: </h3>
-<button id=multi1 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1K eucs)'" onclick="
+<button id=multi1 style="width: 19%" onmouseover="this.textContent = 'All Chairs Not Auto x2'" onmouseout="this.textContent = '2x Multi (Not auto, 1K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 1000){
 multi *= 2;
 document.getElementById('multi1').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000;
-}">2x Multi (1K eucs)</button>
-<button id=multi2 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (10K eucs)'" onclick="
+}">2x Multi (Not auto, 1K eucs)</button>
+<button id=multi2 style="width: 19%" onmouseover="this.textContent = 'All Chairs Not Auto x2'" onmouseout="this.textContent = '2x Multi (Not auto, 10K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 10000){
 multi *= 2;
 document.getElementById('multi2').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000;
-}">2x Multi (10K eucs)</button>
-<button id=eucmulti1 style="width: 17%" onmouseover="this.textContent = 'Extremely uncomfortable chairs x3'" onmouseout="this.textContent = '3x Euc Multi (10K eucs)'" onclick="
+}">2x Multi (Not auto, 10K eucs)</button>
+<button id=eucmulti1 style="width: 19%" onmouseover="this.textContent = 'Extremely uncomfortable chairs x3'" onmouseout="this.textContent = '3x Euc Multi (Auto, 10K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 10000){
 eucmulti *= 3;
 document.getElementById('eucmulti1').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 10000;
-}">3x Euc Multi (10K eucs)</button>
-<button id=multi3 style="width: 14%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (100K eucs)'" onclick="
+}">3x Euc Multi (Auto, 10K eucs)</button>
+<button id=multi3 style="width: 19%" onmouseover="this.textContent = 'All Chairs Not Auto x2'" onmouseout="this.textContent = '2x Multi (Not auto, 100K eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 100000){
 multi *= 2;
 document.getElementById('multi3').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 100000;
-}">2x Multi (100K eucs)</button>
-<button id=multi4 style="width: 13%" onmouseover="this.textContent = 'All Chairs x2'" onmouseout="this.textContent = '2x Multi (1M euc)'" onclick="
+}">2x Multi (Not auto, 100K eucs)</button>
+<button id=multi4 style="width: 19%" onmouseover="this.textContent = 'All Chairs Not Auto x2'" onmouseout="this.textContent = '2x Multi (Not auto, 1M eucs)'" onclick="
 if(parseInt(document.getElementById('euc').innerText) >= 1000000){
 multi *= 2;
 document.getElementById('multi4').style.display = 'none';
 document.getElementById('euc').innerText = parseInt(document.getElementById('euc').innerText) - 1000000;
-}">2x Multi (1M eucs)</button>
+}">2x Multi (Not auto, 1M eucs)</button>
 <br><br>
 
 <img src="https://greensofa24.github.io/tradeachair/dc.PNG" width="70">
@@ -215,11 +219,12 @@ document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 <script>
 function automate(a, b) {
 for(let i = 0; i < parseInt(b); i++) {
-document.getElementById(a).nextElementSibling.click();
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) + 1;
 }
 }
 
 setInterval(function(){automate('euc', document.getElementById('aeuc').innerText)}, 250);
+setInterval(function(){automate('fc', document.getElementById('f').innerText)}, 1000);
 </script>
 
 <script>
@@ -294,6 +299,10 @@ trade('brc', 'stc', 2);">Trade</button>
 <button onclick="
 trade('spuc', 'c', 5);">Trade</button>
 <p>Chair</p>
+
+<img src="https://greensofa24.github.io/tradeachair/fc.png" width="70">
+<span id=fc>0</span>
+<p>Fabulous Chair</p>
 
 <img src="https://greensofa24.github.io/tradeachair/brzc.jpg" width="70">
 <span id=brzc>0</span>
