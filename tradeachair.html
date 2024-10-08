@@ -218,11 +218,11 @@ document.getElementById('dc').innerText = Math.floor(d / 100);">Buy</button>
 
 <script>
 function automate(a, b) {
-document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) + parseInt(b);
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) + parseInt(document.getElementById(b).innerText);
 }
 
-setInterval(function(){automate('euc', document.getElementById('aeuc').innerText)}, 250);
-setInterval(function(){automate('fc', document.getElementById('f').innerText)}, 1000);
+setInterval(function(){automate('euc', 'aeuc')}, 250);
+setInterval(function(){automate('fc', 'f')}, 1000);
 </script>
 
 <script>
