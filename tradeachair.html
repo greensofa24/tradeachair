@@ -118,6 +118,8 @@ a("euc", "10K", 13);
 a("uc", "1K", 14);
 a("vuc", "10K", 15);
 }, 10);
+
+var buymode = "Singles";
 </script>
 
 <h1 id=a style="position:absolute; top:0px; display:none" onclick="
@@ -140,6 +142,13 @@ localStorage.setItem('d', d);">Save</button>
 prestige = localStorage.getItem('prestige');
 document.getElementById('aeuc').innerText = localStorage.getItem('aeuc');
 d = localStorage.getItem('d');">Load</button>
+<br><br>
+<button onclick="if (buymode == 'Singles') {
+buymode = 'Max';
+} else {
+buymode = 'Singles';
+}
+this.innerText = 'Buy ' + buymode">Buy Singles</button>
 <br><br>
 
 <h3>Upgrades: </h3>
@@ -181,9 +190,16 @@ document.getElementById('euc').innerText = parseInt(document.getElementById('euc
 
 <script>
 function trade(a, b, c) {
+if(buymode == "Singles") {
 if(parseInt(document.getElementById(a).innerText) >= c){
 document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + prestige * multi;
 document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - c;
+}
+} else {
+document.getElementById(b).innerText = parseInt(document.getElementById(b).innerText) + prestige * multi * Math.floor(parseInt(document.getElementById(a).innerText / c));
+
+document.getElementById(a).innerText = parseInt(document.getElementById(a).innerText) - prestige * multi *
+Math.floor(parseInt(document.getElementById(a).innerText / c) * c);
 }
 }
 
