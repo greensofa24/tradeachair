@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chair Trade</title>
+    <link rel="icon" type="image/x-icon" href="https://greensofa24.github.io/tradeachair/chair.jpg">
+    <base href="https://greensofa24.github.io/tradeachair/" />
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Comic Sans';
+            font-size: 90%
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 87.5%;
+        }
+
+        .acheivement {
+            display: none;
+            color: red;
+        }
+
+        sbr {
+            display: block;
+            margin-top: 7.5px;
+        }
+
+        bs {
+            display: inline-block;
+            transform: skew(10deg, 0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chair Trade</h1>
+    <span>So you don't get very frustrated later (like with sc and spuc) check out the</span>
+    <a href="https://greensofa24.github.io/tradeachair/guide" target=”_blank”>Trade Guide</a>
+    <br><br>
+
+    <button onclick="localStorage.setItem('body', document.body.innerHTML);">Save</button>
+    <button onclick="document.body.innerHTML = localStorage.getItem('body');">Load</button>
+    <br><br>
+
+    <script>
+        let chairNames = ["Defective Chair", "Extremely Uncomfortable Chair", "Extremely Uncomfortable Autochair", "Very Uncomfortable Chair", "Uncomfortable Chair", "Stone Chair", "Splintery Uncomfortable Chair", "Aluminium Chair", "Brass Chair", "Quite Uncomfortable Chair", "Steel Chair", "Chair", "Fabulous Chair", "Bronze Chair", "Bench", "Comfortable Chair", "Copper Chair", "Shed", "Factory", "Silver Chair", "Platinum Chair", "Gold Chair", "Throne", "Thrench", "Magic Chair"];
+        let chairIds = ["dc", "euc", "aeuc", "vuc", "uc", "sc", "spuc", "ac", "brc", "quc", "stc", "c", "fc", "brzc", "b", "cc", "cpc", "s", "f", "slc", "ptc", "gc", "t", "tb", "mc"];
+        let chairSrcs = ["dc.PNG", "euc.webp", "autoeuc.png", "vuc.jpg", "uc.jpg", "stonechair.png", "spuc.jpg", "ac.jpg", "brc.jpg", "quc.webp", "stc.webp", "chair.jpg", "fc.png", "brzc.jpg", "bench.webp", "cchair.PNG", "cpc.jpg", "shed.jpg", "factory.png", "slc.webp", "ptc.jpg", "goldchair.jpg", "throne.jpg", "thrench.png", "magicchair.png"];
+        let chairTrades = [[], ["euc", 0], ["euc", 500], ["euc", 3], ["vuc", 5], ["uc", 3], ["uc", 5], ["sc", 3], ["sc", 4], ["spuc", 3], ["brc", 2], ["spuc", 5], [], ["stc", 3], ["c", 3], [["c", "quc"], [2, 3]], ["stc", 5], ["b", 3], ["s", 3], ["cpc", 75], ["slc", 40], ["ptc", 2], ["gc", 5], ["tb", 3], []];
+
+        let buyables = [3, 4];
+        let buyablesCost = [["euc", 200], ["vuc", 300]];
+
+        let dc = 0;
+
+        function createChairDiv(chairName, chairId, imgSrc, chairTraded, amount, unlockBuy = false) {
+            let div = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = imgSrc;
+            img.width = 70;
+
+            let span = document.createElement("span");
+            span.id = chairId;
+            span.innerText = 0;
+
+            let p = document.createElement("p");
+            p.innerText = chairName;
+
+            let space = document.createElement("span");
+            space.style.whiteSpace = "pre";
+            space.innerText = " ";
+
+            let space2 = document.createElement("span");
+            space2.style.whiteSpace = "pre";
+            space2.innerText = " ";
+
+            div.appendChild(img);
+            div.appendChild(space);
+            div.appendChild(span);
+            div.appendChild(space2);
+            if (chairTraded) {
+                let button = document.createElement("button");
+                button.id = chairId + "Button";
+                button.innerText = "Trade";
+                button.addEventListener("click", () => {
+                    if (Array.isArray(chairTraded)) {
+                        let canTrade = true;
+                        for (let i in chairTraded) {
+                            let traded = document.getElementById(chairTraded[i]);
+                            if (!parseInt(traded.innerText) - amount[i] >= 0) {
+                                canTrade = false;
+                            }
+                        }
+                        if (canTrade) {
+                            for (let i in chairTraded) {
+                                let traded = document.getElementById(chairTraded[i]);
+                                traded.innerText = parseInt(traded.innerText) - amount[i];
+                            }
+                            span.innerText = parseInt(span.innerText) + 1;
+                        }
+                    } else {
+                        let traded = document.getElementById(chairTraded);
+                        if (parseInt(traded.innerText) - amount >= 0) {
+                            traded.innerText = parseInt(traded.innerText) - amount;
+                            span.innerText = parseInt(span.innerText) + 1;
+                        }
+                    }
+                });
+                let space3 = document.createElement("span");
+                space3.style.whiteSpace = "pre";
+                space3.innerText = " ";
+                div.appendChild(button);
+                div.appendChild(space3);
+            }
+            if (unlockBuy) {
+                let ubButton = document.createElement("button");
+                ubButton.id = chairId + "Ub";
+                ubButton.innerText = "Unlock Buy (" + unlockBuy[1] + " " + unlockBuy[0] + (unlockBuy[1] > 1 ? "s" : "") + ")";
+                ubButton.addEventListener("click", () => {
+                    let traded = document.getElementById(unlockBuy[0]);
+                    if (parseInt(traded.innerText) - unlockBuy[1] >= 0) {
+                        traded.innerText = parseInt(traded.innerText) - unlockBuy[1];
+                        ubButton.style.display = "none";
+                        buyButton.style.display = "inline";
+                    }
+                });
+
+                let buyButton = document.createElement("button");
+                buyButton.id = chairId + "Buy";
+                buyButton.innerText = "Buy";
+                buyButton.addEventListener("click", () => {
+                    span.innerText = parseInt(span.innerText) + 1;
+                });
+                buyButton.style.display = "none";
+                div.appendChild(ubButton);
+                div.appendChild(buyButton);
+            }
+            div.appendChild(p);
+
+            document.body.appendChild(div);
+        }
+
+        let counter = 0;
+
+        for (let i in chairNames) {
+            if (buyables.includes(parseInt(i))) {
+                createChairDiv(chairNames[i], chairIds[i], chairSrcs[i], chairTrades[i][0], chairTrades[i][1], buyablesCost[counter]);
+                counter += 1;
+            } else {
+                createChairDiv(chairNames[i], chairIds[i], chairSrcs[i], chairTrades[i][0], chairTrades[i][1]);
+            }
+        };
+
+        document.getElementById("eucButton").innerText = "Buy";
+        document.getElementById("eucButton").addEventListener("click", () => {
+            dc += 1;
+            if (dc == 100) {
+                dc = 0;
+                document.getElementById("dc").innerText = parseInt(document.getElementById("dc").innerText) + 1;
+            }
+        });
+
+        function automate(chairAdded, chairAdding) {
+            document.getElementById(chairAdded).innerText = parseInt(document.getElementById(chairAdded).innerText) + parseInt(document.getElementById(chairAdding).innerText);
+        }
+
+        setInterval(function () { automate('euc', 'aeuc') }, 250);
+        setInterval(function () { automate('fc', 'f') }, 1000);
+
+        function cheat() {
+            let code = prompt("Enter your cheat code", "");
+            if (code.startsWith("DaleMagicChair")) {
+                if (parseInt(code.replace("DaleMagicChair", ""))) {
+                    document.getElementById("mc").innerText = parseInt(document.getElementById("mc").innerText) + parseInt(code.replace("DaleMagicChair", ""));
+                }
+            }
+            if (code == "200MoreEucForMe") {
+                document.getElementById("euc").innerText = parseInt(document.getElementById("euc").innerText) + 200;
+            }
+        }
+    </script>
+
+    <button onclick="cheat()">Cheat Code</button>
+    <p>Dale <bs>"invented"</bs> magic chairs</p>
+</body>
+
+</html>
